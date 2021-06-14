@@ -5,7 +5,6 @@ function Header() {
   return (
     <header className="header">
       <img alt='логотип страницы о Проекте' src={headerLogo} className="header__logo"/>
-      <div className='header__content'>
         <span className='header__registration'>
           Регистрация
         </span>
