@@ -3,13 +3,14 @@
   background: #F5F5F5;
 }
 
-.techs__elements {
+.elements {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 90px;
 }
 
-.techs__tittle {
+.tittle {
   display: flex;
   justify-content: center;
   font-style: normal;
@@ -17,11 +18,12 @@
   font-size: 50px;
   line-height: 58px;
   letter-spacing: -0.04em;
-  margin: 90px 0 26px 0;
+  margin: 0;
 }
 
 .text_position {
   text-align: center;
+  margin-top: 26px;
 }
 
 .techs__icons {

@@ -4,8 +4,8 @@ function Techs() {
   return (
     <div className='techs'>
       <h2 className='major-tittle'>Технологии</h2>
-      <div className='techs__elements'>
-        <h2 className='techs__tittle'>7 технологий</h2>
+      <div className='elements'>
+        <h2 className='tittle'>7 технологий</h2>
         <p className='text text_position'>
           На курсе веб-разработки мы освоили технологии, 
           которые применили<br />

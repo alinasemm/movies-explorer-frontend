@@ -2,11 +2,11 @@ import React from 'react';
 
 function AboutProject() {
   return (
-    <div className='about'>
+    <div className='about-project'>
       <h2 className='major-tittle'>О проекте</h2>
-      <div className='about__content'>
-        <div className='about__description'>
-          <h2 className='about__tittle'>Дипломный проект включал 5 этапов</h2>
+      <div className='about-project__content'>
+        <div className='about-project__description'>
+          <h2 className='about-project__tittle'>Дипломный проект включал 5 этапов</h2>
           <p className='text'>
             Составление плана, работу над бэкендом, 
             вёрстку, добавление функциональности 
@@ -14,8 +14,8 @@ function AboutProject() {
           </p>
         </div>
 
-        <div className='about__description'>
-          <h2 className='about__tittle'>На выполнение диплома ушло 5 недель</h2>
+        <div className='about-project__description'>
+          <h2 className='about-project__tittle'>На выполнение диплома ушло 5 недель</h2>
           <p className='text'>
             У каждого этапа был мягкий и жёсткий дедлайн, 
             которые нужно было соблюдать, 
@@ -24,14 +24,14 @@ function AboutProject() {
         </div>
       </div>
 
-      <div className='about__timeline'>
-        <div className='about__timeline-backend'>
-          <div className='about__timeline-time about__timeline-time_backend'>1 неделя</div>
-          <div className='about__timeline-info'>Back-end</div>
+      <div className='about-project__timeline'>
+        <div className='about-project__timeline-backend'>
+          <div className='about-project__timeline-time about-project__timeline-time_backend'>1 неделя</div>
+          <div className='about-project__timeline-info'>Back-end</div>
         </div>
-        <div className='about__timeline-frontend'>
-          <div className='about__timeline-time about__timeline-time_frontend'>4 недели</div>
-          <div className='about__timeline-info'>Front-end</div>
+        <div className='about-project__timeline-frontend'>
+          <div className='about-project__timeline-time about-project__timeline-time_frontend'>4 недели</div>
+          <div className='about-project__timeline-info'>Front-end</div>
         </div>
       </div>
     </div>
