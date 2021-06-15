@@ -1,15 +1,16 @@
 .about {
   margin: 110px 70px;
-  height: 608px;
 }
 
-.about__major-tittle {
+.major-tittle {
   font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 50px;
-  letter-spacing: -0.04em;
-  border-bottom: 1px solid black;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    border-bottom: 1px solid black;
+    margin: 0;
+    padding-bottom: 23px;
 }
 
 .about__content {
@@ -35,7 +36,7 @@
   letter-spacing: -0.04em;
 }
 
-.about__text {
+.text {
   margin: 0;
   font-style: normal;
   font-weight: 400;
@@ -51,12 +52,14 @@
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 36px;
 }
 
 .about__timeline-backend {
-  width: 228px;
+  width: 20%;
 }
 
 .about__timeline-time_backend {
@@ -65,7 +68,7 @@
 }
 
 .about__timeline-frontend {
-  width: 912px;
+  width: 80%;
 }
 
 .about__timeline-time_frontend {

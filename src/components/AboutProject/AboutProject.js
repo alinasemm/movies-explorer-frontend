@@ -3,11 +3,11 @@ import React from 'react';
 function AboutProject() {
   return (
     <div className='about'>
-      <h2 className='about__major-tittle'>О проекте</h2>
+      <h2 className='major-tittle'>О проекте</h2>
       <div className='about__content'>
         <div className='about__description'>
           <h2 className='about__tittle'>Дипломный проект включал 5 этапов</h2>
-          <p className='about__text'>
+          <p className='text'>
             Составление плана, работу над бэкендом, 
             вёрстку, добавление функциональности 
             и финальные доработки.
@@ -16,7 +16,7 @@ function AboutProject() {
 
         <div className='about__description'>
           <h2 className='about__tittle'>На выполнение диплома ушло 5 недель</h2>
-          <p className='about__text'>
+          <p className='text'>
             У каждого этапа был мягкий и жёсткий дедлайн, 
             которые нужно было соблюдать, 
             чтобы успешно защититься.

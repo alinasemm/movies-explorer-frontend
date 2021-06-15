@@ -1,14 +1,13 @@
 .promo {
   display: flex;
   justify-content: space-between;
-  position: relative;
   background: #F3C1F8;
-  height: 524px;
-  padding: 75px 70px 0px 70px;
-  margin-bottom: 50px;
+  padding: 75px 70px 50px 70px;
 }
 
 .promo__content {
+  display: flex;
+  flex-direction: column;
   width: 640px;
 }
 
@@ -22,6 +21,8 @@
 }
 
 .promo__text {
+  margin: 0;
+  margin-bottom: 146px;
   width: 310px;
   font-weight: 400;
   font-size: 13px;
@@ -35,14 +36,12 @@
 }
 
 .promo__button {
-  position: absolute;
-  padding: 0;
   width: 129px;
   height: 36px;
+  margin-bottom: 25px;
   border: 1px solid rgba(0, 0, 0, 0.6);;
   background: border-box;
   border-radius: 3px;
-  bottom: 25px;
   font-family: Inter;
   font-weight: 500;
   font-size: 12px;
