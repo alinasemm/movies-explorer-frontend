@@ -34,3 +34,15 @@
   height: 60px;
   width: 29px;
 }
+
+@media screen and (max-width: 1018px) {
+  .portfolio {
+    margin: 0 50px 90px 50px;
+  }
+
+  .portfolio__link-name {
+    font-size: 28px;
+    line-height: 50px;
+  }
+
+}

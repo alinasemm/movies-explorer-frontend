@@ -50,3 +50,28 @@
   line-height: 17px;
   margin-right: 20px;
 }
+
+@media screen and (max-width: 1018px) {
+  .about-me {
+    padding: 90px 50px;
+  }
+
+  .tittle_size {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .tittle__about-me {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-me__image {
+    width: 255px;
+    height: 307px;
+  }
+
+  .about-me__text-elements {
+    width: 364px;
+  }
+}

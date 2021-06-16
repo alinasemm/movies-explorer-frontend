@@ -7,7 +7,7 @@ function AboutMe() {
       <h2 className='major-tittle'>Студент</h2>
       <div className='about-me__elements'>
         <div className='about-me__text-elements'>
-          <h2 className='tittle tittle_position'>Алина</h2>
+          <h2 className='tittle tittle_position tittle_size'>Алина</h2>
           <h3 className='tittle__about-me'>Фронтенд-разработчик, 27 лет</h3>
           <p className='text text_size'>
           Я родилась и живу в Липецке. До 2018 года была руководителем отдела интернет-маркетинга, 

@@ -51,3 +51,23 @@
   text-align: center;
   letter-spacing: -0.04em;
 }
+
+@media screen and (max-width: 1018px) {
+  .techs {
+    padding: 90px 60px;
+  }
+
+  .text_position {
+    margin-top: 22px;
+  }
+
+  .techs__icons {
+    margin-top: 83px;
+    grid-template-columns: repeat(7, 84px);
+  }
+
+  .techs__icon {
+    font-size: 12px;
+    height: 57px;
+  }
+}

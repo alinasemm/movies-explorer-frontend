@@ -33,3 +33,9 @@
   line-height: 16px;
   color: #FFFFFF;
 }
+
+@media screen and (max-width: 1018px) {
+  .header {
+      padding: 0px 30px;
+  }
+}

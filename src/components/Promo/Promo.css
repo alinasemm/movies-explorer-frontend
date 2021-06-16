@@ -8,11 +8,11 @@
 .promo__content {
   display: flex;
   flex-direction: column;
-  width: 640px;
 }
 
 .promo__header {
   margin: 0;
+  width: 640px;;
   margin-bottom: 36px;
   font-style: normal;
   font-weight: 400;
@@ -46,4 +46,30 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
+}
+
+@media screen and (max-width: 1018px) {
+  .promo {
+    padding: 140px 0px 66px 0px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .promo__header {
+    text-align: center;
+    margin-bottom: 22px;
+    width: 680px;
+    height: 100px;
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .promo__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .promo__text {
+    margin-bottom: 90px;
+  }
 }

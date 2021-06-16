@@ -86,4 +86,19 @@
   text-align: center;
 }
 
+@media screen and (max-width: 1018px) {
+  .about-project {
+    margin: 90px 50px;
+  }
+
+  .about-project__description {
+    width: 319px;
+  }
+
+  .text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
 
