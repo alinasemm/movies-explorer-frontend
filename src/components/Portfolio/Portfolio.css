@@ -30,11 +30,6 @@
   padding-bottom: 19px;
 }
 
-.portfolio__link-icon {
-  height: 60px;
-  width: 29px;
-}
-
 @media screen and (max-width: 1018px) {
   .portfolio {
     margin: 0 50px 90px 50px;

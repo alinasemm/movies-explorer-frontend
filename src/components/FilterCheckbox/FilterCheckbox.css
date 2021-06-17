@@ -13,3 +13,11 @@
   margin: 0;
   margin-left: 12px;
 }
+
+.filter-checkbox__button {
+  border: 0;
+  width: 36px;
+  height: 20px;
+  background-color: transparent;
+  background-image: url('../../images/smalltumb-on.svg');
+}
