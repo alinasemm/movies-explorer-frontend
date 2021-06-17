@@ -1,0 +1,36 @@
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 70px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.search-form__write-movie-name {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  background-image: url('../../images/search-icon.svg');
+  width: 34px;
+  height: 34px;
+}
+
+.search-form__find-movie {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  width: 84px;
+  height: 34px;
+  background-image: url('../../images/search-button.svg');
+}
+
+.search-form__tittle {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 34px;
+  text-align: center;
+  color: #A0A0A0;
+  margin: 0;
+  margin-bottom: 15px;
+}

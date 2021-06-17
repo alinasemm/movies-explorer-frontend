@@ -1,0 +1,15 @@
+.filter-checkbox {
+  padding: 30px 0 49px 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+.filter-checkbox__tittle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+  margin-left: 12px;
+}
