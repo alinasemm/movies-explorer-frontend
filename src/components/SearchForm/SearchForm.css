@@ -12,6 +12,8 @@
   background-image: url('../../images/search-icon.svg');
   width: 34px;
   height: 34px;
+  padding: 0;
+  margin-left: 6px;
 }
 
 .search-form__find-movie {
@@ -19,8 +21,9 @@
   outline: 0;
   background-color: transparent;
   background-repeat: no-repeat;
-  width: 84px;
+  width: 80px;
   height: 34px;
+  padding: 0;
   background-image: url('../../images/search-button.svg');
 }
 
