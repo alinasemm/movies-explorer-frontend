@@ -1,0 +1,19 @@
+.more-cards {
+  margin-top: 50px;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.more-cards__button {
+  width: 320px;
+  height: 36px;
+  background: #F9F9F9;
+  border-radius: 6px;
+  border: none;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}

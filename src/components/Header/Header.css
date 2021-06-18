@@ -88,3 +88,20 @@
       padding: 0px 30px;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .header {
+      padding: 0px 14px;
+  }
+
+  .header__info {
+    font-size: 10px;
+    margin-right: 14px;
+  }
+
+  .header__button-lending {
+    width: 54px;
+    height: 26px;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,44 @@
+.movies__card {
+  width: 270px;
+  height: 218px;
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.movies__card-text {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+}
+
+.movies__content {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 12px;
+}
+
+.movies__card-tittle {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.movies__card-time {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #A0A0A0;
+}
+
+.movies__card-button {
+  width: 16px;
+  height: 16px;
+  box-shadow: 0px 3px 6px rgb(0 0 0 / 9%);
+  border-radius: 50%;
+  border: 2px solid white;
+  box-sizing: border-box;
+  background-color: #F9F9F9;
+  outline: 0;
+}

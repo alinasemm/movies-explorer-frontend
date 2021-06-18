@@ -4,3 +4,9 @@
   padding: 0px 70px;
   background: #FFFFFF;
 }
+
+@media screen and (max-width: 1018px) {
+  .movies {
+    padding: 0px 30px;
+  }
+}
