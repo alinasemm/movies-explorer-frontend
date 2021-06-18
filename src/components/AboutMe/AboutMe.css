@@ -75,3 +75,13 @@
     width: 364px;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .about-me__elements {
+    flex-direction: column-reverse;
+  }
+
+  .about-me__text-elements {
+    width: 292px;
+  }
+}

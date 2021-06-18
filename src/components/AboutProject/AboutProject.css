@@ -106,6 +106,10 @@
     margin: 70px 18px;
   }
 
+  .about-project__description {
+    width: 284px;
+  }
+
   .major-tittle {
     font-size: 18px;
     line-height: 22px;
