@@ -6,9 +6,8 @@ function Promo() {
     <div className='promo'>
       <div className='promo__content'>
         <h1 className='promo__header'>
-        Учебный проект студента 
-        факультета<br/>
-        Веб-разработки.
+          <span>Учебный проект студента факультета </span>
+          <span>Веб-разработки.</span>
         </h1>
         <h2 className='promo__text'>
           Листайте ниже, чтобы узнать больше про этот проект и его создателя.

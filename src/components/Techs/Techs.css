@@ -71,3 +71,9 @@
     height: 57px;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .techs__icons {
+    grid-template-columns: repeat(2, 84px);
+  }
+}
