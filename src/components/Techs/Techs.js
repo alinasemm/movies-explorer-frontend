@@ -6,10 +6,10 @@ function Techs() {
       <h2 className='major-tittle'>Технологии</h2>
       <div className='elements'>
         <h2 className='tittle'>7 технологий</h2>
-        <p className='text text_position'>
-          На курсе веб-разработки мы освоили технологии, 
-          которые применили<br />
-          в дипломном проекте.
+        <p className='text text_techs'>
+          <span>На курсе веб-разработки мы освоили технологии, 
+          которые применили </span>
+          <span>в дипломном проекте.</span>
         </p>
         <div className='techs__icons'>
           <div className='techs__icon'>HTML</div>

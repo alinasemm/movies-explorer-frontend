@@ -103,6 +103,8 @@
     height: 114px;
     font-size: 30px;
     line-height: 38px;
+    margin-bottom: 24px;
+    letter-spacing: -0.04em;
   }
 
   .promo__image {
@@ -112,5 +114,10 @@
 
   .promo__text {
     width: 260px;
+    margin-bottom: 80px;
+  }
+
+  .promo__button {
+    margin-bottom: 0px;
   }
 }

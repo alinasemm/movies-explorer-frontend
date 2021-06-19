@@ -37,7 +37,26 @@
 }
 
 @media screen and (max-width: 550px) {
+  .footer {
+    padding: 79px 10px 10px 10px;
+  }
+
+  .footer__tittle {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
   .footer__content {
     flex-direction: column;
+  }
+
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__link:not(:last-child) {
+    margin-bottom: 12px;
   }
 }

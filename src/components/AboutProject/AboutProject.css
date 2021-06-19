@@ -110,6 +110,15 @@
     width: 284px;
   }
 
+  .about-project__description:first-child {
+    margin-bottom: 56px;
+  }
+
+  .text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
   .major-tittle {
     font-size: 18px;
     line-height: 22px;
@@ -119,13 +128,31 @@
   .about-project__tittle {
     font-size: 18px;
     line-height: 22px;
+    margin-bottom: 16px;
   }
 
   .about-project__content {
-    margin-top: 70px;
-    margin-bottom: 110px;
+    margin-top: 60px;
+    margin-bottom: 60px;
     display: flex;
     flex-direction:column;
+  }
+
+  .about-project__timeline-time {
+    font-size: 11px;
+  }
+
+  .about-project__timeline-backend {
+    width: 35.2%;
+  }
+
+  .about-project__timeline-frontend {
+    width: 64.8%;
+  }
+
+  .about-project__timeline-info {
+    font-size: 11px;
+    line-height: 13px;
   }
 }
 

@@ -21,9 +21,11 @@
   margin: 0;
 }
 
-.text_position {
+.text_techs {
   text-align: center;
   margin-top: 26px;
+  width: 460px;
+  letter-spacing: -0.04em;
 }
 
 .techs__icons {
@@ -73,7 +75,28 @@
 }
 
 @media screen and (max-width: 550px) {
+  .techs {
+    padding: 70px 18px;
+  }
+
+  .elements {
+    margin-top: 60px;
+  }
+
+  .tittle {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .text_techs {
+    width: 292px;
+    margin-top: 24px;
+    letter-spacing: -0.04em;
+  }
+
   .techs__icons {
+    margin-top: 50px;
     grid-template-columns: repeat(2, 84px);
+    gap: 10px;
   }
 }
