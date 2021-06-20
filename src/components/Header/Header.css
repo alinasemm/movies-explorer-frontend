@@ -87,6 +87,22 @@
   .header {
       padding: 0px 30px;
   }
+
+  .header__content {
+    background-image: url('../../images/header-movies-button-menu.svg');
+  }
+
+  .header__info_movies {
+    display: none;
+  }
+
+  .header__button-movies {
+    display: none;
+  }
+
+  .header__menu {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 550px) {
