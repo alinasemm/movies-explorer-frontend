@@ -90,6 +90,8 @@
 
   .header__content {
     background-image: url('../../images/header-movies-button-menu.svg');
+    width: 44px;
+    height: 44px;
   }
 
   .header__info_movies {
