@@ -91,7 +91,8 @@
 
 @media screen and (max-width: 550px) {
   .header {
-      padding: 0px 14px;
+    box-sizing: border-box;
+    padding: 0px 14px;
   }
 
   .header__info {

@@ -1,9 +1,14 @@
 .footer {
+  display: grid;
+  grid-template-areas:
+    'title'
+    'content';
   padding: 79px 70px 20px 70px;
 }
 
 .footer__tittle {
   display: flex;
+  grid-area: title;
   justify-content: center;
   font-style: normal;
   font-weight: 400;
@@ -18,6 +23,7 @@
 
 .footer__content {
   display: flex;
+  grid-area: content;
   justify-content: space-between;
   font-style: normal;
   font-weight: 400;
@@ -25,7 +31,13 @@
   line-height: 16px;
 }
 
+.footer__date {
+  grid-area: date;
+  text-align: center;
+}
+
 .footer__link {
+  grid-area: links;
   margin-left: 20px;
 }
 
@@ -47,13 +59,23 @@
   }
 
   .footer__content {
+    display: grid;
+    grid-template-areas: 
+      'links'
+      'date';
     flex-direction: column;
+    justify-content: center;
   }
 
   .footer__links {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .footer__link {
+    grid-area: links;
+    margin-left: 0;
   }
 
   .footer__link:not(:last-child) {

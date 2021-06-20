@@ -5,7 +5,7 @@ function Footer() {
     <footer className='footer'>
       <h3 className='footer__tittle'>Учебный проект Яндекс.Практикум х BeatFilm.</h3>
       <div className='footer__content'>
-        <span> &copy; 2020 </span>
+        <span className='footer__date'> &copy; 2020 </span>
         <div className='footer__links'>
           <span className='footer__link'>Яндекс.Практикум</span>
           <span className='footer__link'>Facebook</span>
