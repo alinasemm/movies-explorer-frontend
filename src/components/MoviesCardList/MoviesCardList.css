@@ -1,8 +1,27 @@
 .movies__card-list {
+  justify-items: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   column-gap: 20px;
   row-gap: 32px;
   padding: 70px 0 30px 0;
   max-width: 100%;
+}
+
+
+@media screen and (max-width: 1018px) {
+  .movies__card-list {
+    grid-template-columns: repeat(auto-fit, minmax(339px, 1fr));
+    column-gap: 30px;
+    grid-row-gap: 36px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .movies__card-list {
+    padding: 40px 10px 30px 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-row-gap: 20px;
+    column-gap: 0;
+  }
 }

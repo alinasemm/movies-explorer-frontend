@@ -25,6 +25,10 @@
   margin-bottom: 10px;
 }
 
+.movies__card-photo {
+  width: 270px;
+}
+
 .movies__card-time {
   font-weight: 400;
   font-size: 11px;
@@ -41,4 +45,27 @@
   box-sizing: border-box;
   background-color: #F9F9F9;
   outline: 0;
+}
+
+
+@media screen and (max-width: 1018px) {
+  .movies__card {
+    width: 339px;
+    height: 257px;
+  }
+
+  .movies__card-photo {
+    width: 339px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .movies__card {
+    width: 300px;
+    height: 235px;
+  }
+
+  .movies__card-photo {
+    width: 300px;
+  }
 }
