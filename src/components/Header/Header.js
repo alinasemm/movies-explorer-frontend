@@ -29,7 +29,7 @@ function Header() {
             <li className='header__menu-text'>Сохраненные фильмы</li>
           </ul>
         </div>
-        <div className='header__content'>
+        <div className='header__content header__content_movies'>
           <span className='header__info header__info_movies'>Аккаунт</span>
           <button className='header__button-movies' />
         </div>

@@ -30,6 +30,11 @@
   padding-bottom: 19px;
 }
 
+.portfolio__link-icon {
+  height: 50px;
+  width: 16px;
+}
+
 @media screen and (max-width: 1018px) {
   .portfolio {
     margin: 0 50px 90px 50px;
@@ -58,7 +63,7 @@
 
   .portfolio__link-icon {
     height: 28px;
-    width: 18px;
+    width: 9px;
     letter-spacing: -0.04em;
   }
 }
