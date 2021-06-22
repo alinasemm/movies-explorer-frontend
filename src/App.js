@@ -5,6 +5,7 @@ import Main from './components/Main/Main';
 import Movies from './components/Movies/Movies';
 import SavedMovies from './components/SavedMovies/SavedMovies'
 import Footer from './components/Footer/Footer';
+import Profile from './components/Profile/Profile'
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/saved-movies">
           <SavedMovies />
+        </Route>
+        <Route exact path="/profile">
+          <Profile />
         </Route>
       </Switch>
       <Footer />
