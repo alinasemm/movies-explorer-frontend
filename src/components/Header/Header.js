@@ -19,7 +19,7 @@ function Header() {
     );
   }
 
-  if (location.pathname === '/movies') {
+  if (location.pathname === '/movies' || '/saved-movies') {
     return (
       <header className='header header_movies'>
         <div className='header__main'>

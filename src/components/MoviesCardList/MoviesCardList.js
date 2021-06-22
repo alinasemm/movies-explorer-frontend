@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import previewCard from '../../images/preview-1.png';
 import MoviesCard from '../MoviesCard/MoviesCard';
 
-function MoviesCardList() {
+function MoviesCardList({ withDeleteButton }) {
   const [cardsLength, setCardsLength] = useState(16)
 
   const updateCardsLength = () => {
@@ -39,6 +39,7 @@ function MoviesCardList() {
               name={movie.name}
               thumbnail={movie.thumbnail}
               duration={movie.duration}
+              withDeleteButton={withDeleteButton}
             />
           )
         })}
