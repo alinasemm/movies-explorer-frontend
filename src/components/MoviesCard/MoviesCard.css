@@ -47,16 +47,6 @@
   outline: 0;
 }
 
-.movies__card-button_delete {
-  background-image: url('../../images/icon-delete-card.svg');
-  border: none;
-  height: 16px;
-  width: 16px;
-  padding: 0;
-  outline: 0;
-  background-color: transparent;
-}
-
 
 @media screen and (max-width: 1018px) {
   .movies__card {

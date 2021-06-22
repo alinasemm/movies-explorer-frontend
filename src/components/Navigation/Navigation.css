@@ -1,0 +1,36 @@
+.navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  margin-left: 40px;
+}
+
+.navigation_horizontal {
+  display: contents;
+}
+
+.navigation_vertical {
+  display: contents;
+}
+
+.navigation__link {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.navigation__link:first-child {
+  margin-right: 16px;
+}
+
+@media screen and (max-width: 1018px) {
+  .navigation_horizontal {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1018px) {
+  .navigation_vertical {
+    display: none;
+  }
+}

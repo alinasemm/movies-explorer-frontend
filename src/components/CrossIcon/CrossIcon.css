@@ -1,0 +1,9 @@
+.cross-icon {
+  background-image: url('../../images/icon-close.svg');
+  border: none;
+  height: 16px;
+  width: 16px;
+  padding: 0;
+  outline: 0;
+  background-color: transparent;
+}

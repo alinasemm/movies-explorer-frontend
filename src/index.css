@@ -20,3 +20,7 @@
 @import './components/MoreCards/MoreCards.css';
 @import './components//SavedMovies/SavedMovies.css';
 @import './components/Profile/Profile.css';
+@import './components/Navigation/Navigation.css';
+@import './components/Menu/Menu.css';
+@import './components/CrossIcon/CrossIcon.css';
+@import './components/UserInfo/UserInfo.css';

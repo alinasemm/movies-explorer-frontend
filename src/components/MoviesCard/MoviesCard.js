@@ -1,8 +1,9 @@
 import React from 'react';
+import CrossIcon from '../CrossIcon/CrossIcon';
 
 function MoviesCard({ thumbnail, name, duration, withDeleteButton }) {
   const button = withDeleteButton
-    ? <button className='movies__card-button_delete' />
+    ? <CrossIcon />
     : <button className='movies__card-button' />;
 
   return (

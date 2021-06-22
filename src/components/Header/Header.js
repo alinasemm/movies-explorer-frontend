@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import Navigation from '../Navigation/Navigation';
+import UserInfo from '../UserInfo/UserInfo';
 import headerLogo from '../../images/header-logo.svg';
 
 function Header() {
@@ -8,31 +10,33 @@ function Header() {
   if (location.pathname === '/') {
     return (
       <header className='header'>
-        <img alt='логотип страницы о Проекте' src={headerLogo} className="header__logo"/>
-        <div className='header__content'>
-          <span className='header__info'>
-            Регистрация
-          </span>
-          <button className='header__button-lending'>Войти</button>
-        </div>
+        <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo'/>
+        <UserInfo
+          buttonClassName='user-info__button_lending'
+          text='Регистрация'
+          buttonText='Войти'
+        />
       </header>
     );
   }
 
   if (location.pathname === '/movies' || '/saved-movies') {
+    const links = [
+      { title: 'Фильмы' },
+      { title: 'Сохраненные фильмы' },
+    ]
     return (
       <header className='header header_movies'>
         <div className='header__main'>
-        <img alt='логотип страницы о Проекте' src={headerLogo} className="header__logo"/>
-          <ul className='header__menu'>
-            <li className='header__menu-text'>Фильмы</li>
-            <li className='header__menu-text'>Сохраненные фильмы</li>
-          </ul>
+          <img alt='логотип страницы о Проекте' src={headerLogo} className="header__logo"/>
+          <Navigation links={links} className='navigation_horizontal' />
         </div>
-        <div className='header__content header__content_movies'>
-          <span className='header__info header__info_movies'>Аккаунт</span>
-          <button className='header__button-movies' />
-        </div>
+        <UserInfo
+          contClassName='user-info_movies'
+          textClassName='user-info__text_movies'
+          buttonClassName='user-info__button_movies'
+          text='Аккаунт'
+        />
       </header>
     );
   }
