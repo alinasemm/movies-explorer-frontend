@@ -5,29 +5,50 @@ import Main from './components/Main/Main';
 import Movies from './components/Movies/Movies';
 import SavedMovies from './components/SavedMovies/SavedMovies'
 import Footer from './components/Footer/Footer';
-import Profile from './components/Profile/Profile'
+import Profile from './components/Profile/Profile';
+import PageNotFound from './components/PageNotFound/PageNotFound';
+
+function PageWrapper ({ children }) {
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  )
+}
 
 function App() {
   return (
     <div className='app'>
       <BrowserRouter>
-      <Header />
-      <Switch>
-        <Route exact path="/">
-          <Main />
-        </Route>
-        <Route path="/movies">
-          <Movies />
-        </Route>
-        <Route path="/saved-movies">
-          <SavedMovies />
-        </Route>
-        <Route exact path="/profile">
-          <Profile />
-        </Route>
-      </Switch>
-      <Footer />
-    </BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <PageWrapper>
+              <Main />
+            </PageWrapper>
+          </Route>
+          <Route path="/movies">
+            <PageWrapper>
+              <Movies />
+            </PageWrapper>
+          </Route>
+          <Route path="/saved-movies">
+            <PageWrapper>
+              <SavedMovies />
+            </PageWrapper>
+          </Route>
+          <Route exact path="/profile">
+            <PageWrapper>
+              <Profile />
+            </PageWrapper>
+          </Route>
+          <Route path="*">
+            <PageNotFound />
+          </Route>
+        </Switch>
+        
+      </BrowserRouter>
     </div>
   );
 }
