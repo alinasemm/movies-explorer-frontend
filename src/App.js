@@ -8,12 +8,12 @@ import Footer from './components/Footer/Footer';
 import Profile from './components/Profile/Profile';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 
-function PageWrapper ({ children }) {
+function PageWrapper ({ children, withHeader = true, withFooter = true }) {
   return (
     <>
-      <Header />
+      {withHeader && <Header />}
       {children}
-      <Footer />
+      {withFooter && <Footer />}
     </>
   )
 }
@@ -39,7 +39,7 @@ function App() {
             </PageWrapper>
           </Route>
           <Route exact path="/profile">
-            <PageWrapper>
+            <PageWrapper withFooter={false}>
               <Profile />
             </PageWrapper>
           </Route>
