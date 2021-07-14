@@ -70,11 +70,25 @@
 }
 
 @media screen and (max-width: 770px) {
+  .profile__form {
+    min-width: 260px;
+  }
   .profile__name {
     margin-top: 236px;
     margin-bottom: 96px;
   }
   .profile__form {
     margin-bottom: 210px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .profile__name {
+    margin-top: 70px;
+    margin-bottom: 80px;
+  }
+  .profile__form {
+    margin-bottom: 379px;
   }
 }
