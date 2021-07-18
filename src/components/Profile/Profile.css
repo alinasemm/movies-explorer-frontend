@@ -56,12 +56,12 @@
   color: #FF4062;
 }
 
-.profile__labels:first-child {
+.labels:first-child {
   border-bottom: 1px solid #E8E8E8;
   padding-bottom: 16px;
 }
 
-.profile__labels:last-child {
+.labels:last-child {
   padding-top: 17px;
 }
 
@@ -73,11 +73,11 @@
   .profile__form {
     min-width: 260px;
   }
-  .profile__name {
+  .greeting {
     margin-top: 236px;
     margin-bottom: 96px;
   }
-  .profile__form {
+  .form {
     margin-bottom: 210px;
   }
 }
