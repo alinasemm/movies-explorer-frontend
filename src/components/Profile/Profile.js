@@ -3,7 +3,7 @@ import React from 'react';
 function Profile() {
   return (
     <div className='profile'>
-      <h2 className='profile__name'>Привет, Виталий!</h2>
+      <h2 className='greeting'>Привет, Виталий!</h2>
       <form className='profile__form'>
         <div className='profile__labels'>
           <label>

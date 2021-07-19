@@ -6,14 +6,16 @@ function Register() {
   const history = useHistory();
 
   return (
-    <Form
+    <div className='register'>
+      <Form
       title='Добро пожаловать!'
-    >
+      >
       <span className="" onClick={() => history.push('/signin')}>
         Уже зарегистрированы?
         Войти
       </span>
-    </Form>
+      </Form>
+    </div>
   );
 }
 

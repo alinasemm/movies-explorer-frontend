@@ -1,0 +1,23 @@
+.input-container {
+  display: grid;
+  width: 396px;
+  row-gap: 5px;
+  border-bottom: 1px solid #E8E8E8
+}
+
+.label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #A0A0A0;
+}
+
+.input {
+  border: 0;
+  margin-bottom: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+}

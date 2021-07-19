@@ -1,5 +1,5 @@
 .form {
-  min-width: 410px;
+  width: 396px;
   display: flex;
   flex-direction: column;
   margin-bottom: 220px;

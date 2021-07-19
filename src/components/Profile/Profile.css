@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.profile__name {
+.greeting {
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -56,12 +56,12 @@
   color: #FF4062;
 }
 
-.labels:first-child {
+.profile__labels:first-child {
   border-bottom: 1px solid #E8E8E8;
   padding-bottom: 16px;
 }
 
-.labels:last-child {
+.profile__labels:last-child {
   padding-top: 17px;
 }
 
@@ -84,7 +84,7 @@
 
 @media screen and (max-width: 400px) {
 
-  .profile__name {
+  .greeting {
     margin-top: 70px;
     margin-bottom: 80px;
   }

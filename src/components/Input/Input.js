@@ -2,7 +2,7 @@ import React from 'react';
 
 function Input({ label, ...props }) {
   return (
-    <div className='container'>
+    <div className='input-container'>
       <label className='label'>
         {label}
       </label>
