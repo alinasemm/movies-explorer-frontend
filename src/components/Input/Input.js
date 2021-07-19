@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Input({ label, ...props }) {
+function Input({ label, initialErrorMessage = '', contClassName = '', ...props }) {
+  const [errorMessage, setErrorMessage] = useState(initialErrorMessage);
+
   return (
-    <div className='input-container'>
+    <div className={`input-container ${contClassName}`}>
       <label className='label'>
         {label}
       </label>
-      <input className='input' {...props}/>
+      <input className={`input ${errorMessage ? 'input_error' : ''}`} {...props} />
+      {errorMessage && (
+        <span className='error-message'>
+          {errorMessage}
+        </span>
+      )}
     </div>
   );
 }

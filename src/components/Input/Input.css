@@ -2,7 +2,10 @@
   display: grid;
   width: 396px;
   row-gap: 5px;
-  border-bottom: 1px solid #E8E8E8
+}
+
+.input-container_with-margin {
+  margin-top: 24px;
 }
 
 .label {
@@ -15,9 +18,23 @@
 
 .input {
   border: 0;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.input_error {
+  color: #FF4062;
+}
+
+.error-message {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FF4062;
+  margin-top: 6px;
 }
