@@ -2,6 +2,7 @@
   display: grid;
   width: 396px;
   row-gap: 5px;
+  margin-top: 40px;
 }
 
 .input-container_with-margin {
@@ -24,6 +25,7 @@
   font-size: 14px;
   line-height: 17px;
   border-bottom: 1px solid #E8E8E8;
+  outline: 0;
 }
 
 .input_error {
