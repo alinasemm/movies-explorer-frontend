@@ -2,7 +2,6 @@
   width: 396px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 70px;
 }
 
 .greeting {
@@ -13,3 +12,15 @@
   margin: 0;
   margin-top: 40px;
 }
+
+@media screen and (max-width: 400px) {
+  .greeting {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .form {
+    width: 260px;
+  }
+}
+

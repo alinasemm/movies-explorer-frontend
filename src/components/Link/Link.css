@@ -11,3 +11,10 @@
   cursor: pointer;
   color: #000000;
 }
+
+@media screen and (max-width: 400px) {
+  .link-text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

@@ -13,3 +13,11 @@
   margin-bottom: 16px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 400px) {
+  .button {
+    width: 260px;
+    margin-top: 157px;
+    margin-bottom: 14px;
+  }
+}
