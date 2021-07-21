@@ -13,6 +13,12 @@
   margin-top: 40px;
 }
 
+.greeting_profile {
+  margin-top: 74px;
+  text-align: center;
+  margin-bottom: 123px;
+}
+
 @media screen and (max-width: 400px) {
   .greeting {
     margin-top: 50px;
