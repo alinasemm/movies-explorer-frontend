@@ -4,7 +4,7 @@ import Navigation from '../Navigation/Navigation';
 import UserInfo from '../UserInfo/UserInfo';
 import headerLogo from '../../images/header-logo.svg';
 
-function Header() {
+function Header({headerLogoClassName = ''}) {
   const location = useLocation()
 
   if (location.pathname === '/') {
@@ -16,6 +16,14 @@ function Header() {
           text='Регистрация'
           buttonText='Войти'
         />
+      </header>
+    );
+  }
+
+  if (location.pathname === '/signup' || '/signin') {
+    return (
+      <header className='header'>
+        <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo'/>
       </header>
     );
   }

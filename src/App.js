@@ -7,7 +7,9 @@ import SavedMovies from './components/SavedMovies/SavedMovies'
 import Footer from './components/Footer/Footer';
 import Profile from './components/Profile/Profile';
 import PageNotFound from './components/PageNotFound/PageNotFound';
+
 import Register from './components/Register/Register';
+import Login from './components/Login/Login';
 
 function PageWrapper ({ children, withHeader = true, withFooter = true }) {
   return (
@@ -47,6 +49,11 @@ function App() {
           <Route exact path="/signup">
             <PageWrapper withFooter={false}>
               <Register />
+            </PageWrapper>
+          </Route>
+          <Route exact path="/signin">
+            <PageWrapper withFooter={false}>
+              <Login />
             </PageWrapper>
           </Route>
           <Route path="*">

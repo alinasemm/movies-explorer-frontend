@@ -14,10 +14,18 @@
   cursor: pointer;
 }
 
+.button_with-margin {
+  margin-top: 221px;
+}
+
 @media screen and (max-width: 400px) {
   .button {
     width: 260px;
     margin-top: 157px;
     margin-bottom: 14px;
+  }
+
+  .button_with-margin {
+    margin-top: 309px;
   }
 }

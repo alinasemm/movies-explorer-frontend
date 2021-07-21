@@ -1,22 +1,17 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import Form from '../Form/Form';
 import Button from '../Button/Button';
 import Link from '../Link/Link';
-import { useHistory } from 'react-router-dom';
 
-function Register() {  
+function Login() {  
   const history = useHistory();
 
   const inputs = [
     {
-      label: 'Имя',
-      placeholder: 'Алина'
-    },
-    {
       label: 'Почта',
       placeholder: 'example@gmail.com',
-      type: 'email',
-      contClassName: 'input-container_with-margin'
+      type: 'email'
     },
     {
       label: 'Пароль',
@@ -30,14 +25,17 @@ function Register() {
   return (
     <div className='sign-container'>
       <Form
+        title='Рады видеть!'
         inputs={inputs}
-        title='Добро пожаловать!'
       >
-        <Button text='Зарегистрироваться'/>
+        <Button 
+        text='Войти'
+        buttonClassName='button_with-margin'
+        />
         <Link
-          text='Уже зарегистрированы?'
-          linkText='Войти'
-          onClick={() => history.push('/signin')}
+          text='Еще не зарегистрированы?'
+          linkText='Регистрация'
+          onClick={() => history.push('/signup')}
         />
       </Form>
     </div>
@@ -45,4 +43,4 @@ function Register() {
 }
 
 
-export default Register;
+export default Login;
