@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
-function Input({ label, initialErrorMessage = '', contClassName = '', ...props }) {
+function Input({ label, inputClassName='', labelClassName='', initialErrorMessage = '', contClassName = '', ...props }) {
   const [errorMessage, setErrorMessage] = useState(initialErrorMessage);
 
   return (
     <div className={`input-container ${contClassName}`}>
-      <label className='label'>
+      <label className={`label ${labelClassName}`}>
         {label}
       </label>
-      <input className={`input ${errorMessage ? 'input_error' : ''}`} {...props} />
+      <input className={`input ${inputClassName} ${errorMessage ? 'input_error' : ''}`} {...props} />
       {errorMessage && (
         <span className='error-message'>
           {errorMessage}

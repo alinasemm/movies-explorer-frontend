@@ -1,7 +1,6 @@
 import React from 'react';
 import Form from '../Form/Form';
-import Button from '../Button/Button';
-import Link from '../Link/Link';
+import EditAndExitButton from '../EditAndExitButton/EditAndExitButton';
 import { useHistory } from 'react-router-dom';
 
 
@@ -12,13 +11,17 @@ function Profile() {
     {
       label: 'Имя',
       placeholder: 'Алина',
-      contClassName: 'input-container_profile'
+      contClassName: 'input-container_profile',
+      inputClassName: 'input_profile',
+      labelClassName: 'label_profile'
     },
     {
       label: 'Почта',
       placeholder: 'pochta@yandex.ru',
       type: 'email',
-      contClassName: 'input-container_profile'
+      contClassName: 'input-container_profile input-container_profile-gap',
+      inputClassName: 'input_profile',
+      labelClassName: 'label_profile'
     },
   ];
 
@@ -29,12 +32,9 @@ function Profile() {
         greetingClassName='greeting_profile'
         inputs={inputs}
       >
-        <Button 
-          text='Редактировать'
-          onClick={() => history.push('/signup')}
-        />
-        <Link
-          text='Выйти из аккаунта'
+        <EditAndExitButton
+          editText='Редактировать'
+          exitText='Выйти'
           onClick={() => history.push('/signup')}
         />
       </Form>

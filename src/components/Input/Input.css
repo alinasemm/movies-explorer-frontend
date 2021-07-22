@@ -10,6 +10,15 @@
   grid-template-areas:
   'label input'
   'label input';
+  border-bottom: 1px solid #E8E8E8;
+  padding-bottom: 16px;
+  row-gap: 0px;
+}
+
+.input-container_profile-gap {
+  padding-top: 17px;
+  padding-bottom: 0px;
+  border-bottom: 0px;
 }
 
 @media screen and (max-width: 400px) {
@@ -31,6 +40,14 @@
   color: #A0A0A0;
 }
 
+.label_profile {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #000000;
+  grid-area: label;
+}
+
 .input {
   border: 0;
   padding-bottom: 10px;
@@ -40,6 +57,18 @@
   line-height: 17px;
   border-bottom: 1px solid #E8E8E8;
   outline: 0;
+}
+
+.input_profile {
+  text-align: end;
+  border-bottom: 0;
+  padding-bottom: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  color: #000000;
+  grid-area: input;
 }
 
 .input_error {
