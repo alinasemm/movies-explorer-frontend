@@ -26,6 +26,10 @@
     margin-top: 80px;
     width: 260px;
   }
+
+  .input-container_profile {
+    margin-top: 0px;
+  }
 }
 
 .input-container_with-margin {

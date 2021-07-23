@@ -32,6 +32,11 @@
     text-align: center;
   }
 
+  .greeting_profile {
+    margin-top: 70px;
+    margin-bottom: 80px;
+  }
+
   .form {
     width: 260px;
   }

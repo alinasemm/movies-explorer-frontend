@@ -33,3 +33,11 @@
     margin-top: 210px;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .buttons {
+    margin-top: 379px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
