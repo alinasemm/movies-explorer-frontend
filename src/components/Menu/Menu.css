@@ -1,5 +1,8 @@
 .menu {
-  width: 520px;
+  width: 67.7%;;
   height: 100vh;
   background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  margin-top: 22.44px;
 }

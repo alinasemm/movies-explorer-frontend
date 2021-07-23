@@ -32,7 +32,7 @@ function Header({headerClassName = ''}) {
     case '/saved-movies':
     case '/profile':
       const links = [
-        { title: 'Фильмы' },
+        { title: 'Фильмы', className: 'navigation__link_first' },
         { title: 'Сохраненные фильмы' },
       ]
       return (

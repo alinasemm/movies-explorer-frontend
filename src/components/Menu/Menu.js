@@ -6,13 +6,19 @@ import CrossIcon from '../CrossIcon/CrossIcon';
 function Menu() {
   const links = [
     { title: 'Главная' },
-    { title: 'Фильмы' },
+    { title: 'Фильмы', className: 'navigation__link_underline' },
     { title: 'Сохраненные фильмы' },
   ]
   return (
     <div className='menu'>
-      <CrossIcon />
-      <Navigation className='navigation_vertical' links={links} />
+      <CrossIcon 
+        iconClassName='cross-icon_menu'
+      />
+      <Navigation 
+      className='navigation_vertical' 
+      links={links}
+      linksClassName='navigation__link_menu'
+      />
       <UserInfo
         contClassName='user-info_movies'
         textClassName='user-info__text_movies'

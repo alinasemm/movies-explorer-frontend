@@ -1,9 +1,18 @@
 .cross-icon {
-  background-image: url('../../images/icon-close.svg');
+  background-image: url('../../images/icon-close-movies.svg');
   border: none;
   height: 16px;
   width: 16px;
   padding: 0;
   outline: 0;
   background-color: transparent;
+  background-position: center;
+}
+
+.cross-icon_menu {
+  background-image: url('../../images/icon-close-menu.svg');
+  align-self: flex-end;
+  height: 22px;
+  width: 22px;
+  margin-bottom: 77.44px;
 }

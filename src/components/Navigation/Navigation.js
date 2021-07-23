@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Navigation ({ className = '', links = [] }) {
+function Navigation ({ className = '', links = [], linksClassName='' }) {
   return (
     <ul className={`navigation ${className}`}>
-      {links.map((link, i) => {
+      {links.map(({title='', className=''}, i) => {
         return (
-          <li className='navigation__link' key={i}>
-            {link.title}
+          <li className={`navigation__link ${className} ${linksClassName}`} key={i}>
+            {title}
           </li>
         )
       })}
