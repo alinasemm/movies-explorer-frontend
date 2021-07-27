@@ -44,7 +44,7 @@ function Header({headerClassName = ''}) {
           <UserInfo
             contClassName='user-info_movies'
             textClassName='user-info__text_movies'
-            buttonClassName='user-info__button_movies'
+            buttonClassName='user-info__button_menu user-info__button_movies'
             text='Аккаунт'
           />
         </header>

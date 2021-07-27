@@ -1,8 +1,15 @@
 .menu {
-  width: 67.7%;;
+  width: 67.7%;
   height: 100vh;
   background: #FFFFFF;
   display: flex;
   flex-direction: column;
-  margin-top: 22.44px;
+  position: fixed;
+  right: 0;
+}
+
+@media screen and (max-width: 550px) {
+  .menu {
+    width: 100%;
+  }
 }

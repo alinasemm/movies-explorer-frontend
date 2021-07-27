@@ -15,14 +15,14 @@ function Menu() {
         iconClassName='cross-icon_menu'
       />
       <Navigation 
-      className='navigation_vertical' 
-      links={links}
-      linksClassName='navigation__link_menu'
+        className='navigation_vertical' 
+        links={links}
+        linksClassName='navigation__link_menu'
       />
       <UserInfo
-        contClassName='user-info_movies'
-        textClassName='user-info__text_movies'
-        buttonClassName='user-info__button_movies'
+        contClassName='user-info_menu'
+        textClassName='user-info__text_menu'
+        buttonClassName='user-info__button_menu'
         text='Аккаунт'
       />
     </div>

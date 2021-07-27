@@ -10,7 +10,7 @@ function UserInfo ({ contClassName = '', textClassName = '', buttonClassName = '
         {buttonText}
       </button>
     </div>
-  )
+  );
 }
 
 export default UserInfo

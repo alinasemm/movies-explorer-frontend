@@ -3,12 +3,12 @@ import SearchForm from '../SearchForm/SearchForm';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import MoreCards from '../MoreCards/MoreCards';
-import Menu from '../Menu/Menu';
+import Background from '../Background/Background';
 
 function Movies() {
   return (
     <div className="movies">
-      <Menu />
+      <Background />
       <SearchForm />
       <FilterCheckbox />
       <MoviesCardList />

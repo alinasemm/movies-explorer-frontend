@@ -12,6 +12,11 @@
   line-height: 16px;
 }
 
+.user-info_menu {
+  margin-top: auto;
+  margin-bottom: 92px;
+}
+
 .user-info__text_movies {
   font-size: 14px;
   margin-right: 13px;
@@ -34,7 +39,7 @@
   color: #FFFFFF;
 }
 
-.user-info__button_movies {
+.user-info__button_menu {
   background-image: url('../../images/header-button-movies.svg');
   background-position: center;
   width: 30px;
@@ -45,6 +50,10 @@
   border-radius: 6px;
 }
 
+.user-info__text_menu {
+  font-size: 14px;
+  margin-right: 13px;
+}
 
 @media screen and (max-width: 1018px) {
   .user-info_movies {
@@ -71,6 +80,14 @@
   .user-info__text {
     font-size: 10px;
     margin-right: 14px;
+  }
+
+  .user-info__text_menu {
+    font-size: 14px;
+  }
+
+  .user-info_menu {
+    margin-bottom: 48px;
   }
 
   .user-info__button_lending {
