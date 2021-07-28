@@ -1,18 +1,19 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import UserInfo from '../UserInfo/UserInfo';
 import BurgerButton from '../BurgerButton/BurgerButton'
 import headerLogo from '../../images/header-logo.svg';
 
 function Header({ headerClassName = '', openMenu }) {
-  const location = useLocation()
+  const location = useLocation();
+  const history = useHistory();
 
   switch (location.pathname) {
     case '/':
       return (
         <header className='header'>
-          <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo'/>
+          <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo' onClick={() => history.push('/')}/>
           <UserInfo
             buttonClassName='user-info__button_lending'
             text='Регистрация'
@@ -25,7 +26,7 @@ function Header({ headerClassName = '', openMenu }) {
     case '/signin':
       return (
         <header className='header header_sign'>
-          <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo'/>
+          <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo' onClick={() => history.push('/')}/>
         </header>
       );
 
@@ -39,7 +40,7 @@ function Header({ headerClassName = '', openMenu }) {
       return (
         <header className='header header_movies'>
           <div className='header__main'>
-            <img alt='логотип страницы о Проекте' src={headerLogo} className="header__logo"/>
+            <img alt='логотип страницы о Проекте' src={headerLogo} className="header__logo" onClick={() => history.push('/')}/>
             <Navigation links={links} className='navigation_horizontal' />
           </div>
           <BurgerButton onClick={openMenu} />

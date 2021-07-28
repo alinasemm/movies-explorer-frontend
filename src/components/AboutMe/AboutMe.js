@@ -15,8 +15,8 @@ function AboutMe() {
             Из хобби – путешествия, изучение английского, чтение книг.
           </p>
           <div className='about-me__links'>
-            <span className='about-me__link'>Facebook</span>
-            <span className='about-me__link'>Github</span>
+            <a href='https://www.facebook.com/alina.semikolenova/' className='about-me__link' target='_blank'>Facebook</a>
+            <a href='https://github.com/alinasemm' className='about-me__link' target='_blank'>Github</a>
           </div>
         </div>
         <img className='about-me__image' alt='фото' src={aboutMeImage} />
