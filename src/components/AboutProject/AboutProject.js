@@ -1,26 +1,28 @@
 import React from 'react';
+import MajorTitle from '../MajorTitle/MajorTitle';
+import Text from '../Text/Text';
 
 function AboutProject() {
   return (
     <div className='about-project'>
-      <h2 className='major-tittle'>О проекте</h2>
+      <MajorTitle>О проекте</MajorTitle>
       <div className='about-project__content'>
         <div className='about-project__description'>
-          <h2 className='about-project__tittle'>Дипломный проект включал 5 этапов</h2>
-          <p className='text'>
+          <h2 className='about-project__title'>Дипломный проект включал 5 этапов</h2>
+          <Text>
             Составление плана, работу над бэкендом, 
             вёрстку, добавление функциональности 
             и финальные доработки.
-          </p>
+          </Text>
         </div>
 
         <div className='about-project__description'>
-          <h2 className='about-project__tittle'>На выполнение диплома ушло 5 недель</h2>
-          <p className='text'>
+          <h2 className='about-project__title'>На выполнение диплома ушло 5 недель</h2>
+          <Text>
             У каждого этапа был мягкий и жёсткий дедлайн, 
             которые нужно было соблюдать, 
             чтобы успешно защититься.
-          </p>
+          </Text>
         </div>
       </div>
 

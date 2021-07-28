@@ -10,24 +10,6 @@
   margin-top: 90px;
 }
 
-.tittle {
-  display: flex;
-  justify-content: center;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 50px;
-  line-height: 58px;
-  letter-spacing: -0.04em;
-  margin: 0;
-}
-
-.text_techs {
-  text-align: center;
-  margin-top: 26px;
-  width: 460px;
-  letter-spacing: -0.04em;
-}
-
 .techs__icons {
   display: grid;
   grid-template-columns: repeat(7, 90px);
@@ -59,10 +41,6 @@
     padding: 90px 60px;
   }
 
-  .text_position {
-    margin-top: 22px;
-  }
-
   .techs__icons {
     margin-top: 83px;
     grid-template-columns: repeat(7, 84px);
@@ -81,17 +59,6 @@
 
   .elements {
     margin-top: 60px;
-  }
-
-  .tittle {
-    font-size: 30px;
-    line-height: 36px;
-  }
-
-  .text_techs {
-    width: 292px;
-    margin-top: 24px;
-    letter-spacing: -0.04em;
   }
 
   .techs__icons {

@@ -6,7 +6,7 @@
   padding: 79px 70px 20px 70px;
 }
 
-.footer__tittle {
+.footer__title {
   display: flex;
   grid-area: title;
   justify-content: center;
@@ -53,7 +53,7 @@
     padding: 79px 10px 10px 10px;
   }
 
-  .footer__tittle {
+  .footer__title {
     font-size: 12px;
     line-height: 15px;
   }

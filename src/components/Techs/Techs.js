@@ -1,16 +1,19 @@
 import React from 'react';
+import MajorTitle from '../MajorTitle/MajorTitle';
+import Title from '../Title/Title';
+import Text from '../Text/Text';
 
 function Techs() {
   return (
     <div className='techs'>
-      <h2 className='major-tittle'>Технологии</h2>
+      <MajorTitle>Технологии</MajorTitle>
       <div className='elements'>
-        <h2 className='tittle'>7 технологий</h2>
-        <p className='text text_techs'>
+        <Title>7 технологий</Title>
+        <Text className='text_techs'>
           <span>На курсе веб-разработки мы освоили технологии, 
           которые применили </span>
           <span>в дипломном проекте.</span>
-        </p>
+        </Text>
         <div className='techs__icons'>
           <div className='techs__icon'>HTML</div>
           <div className='techs__icon'>CSS</div>

@@ -1,26 +1,15 @@
 import './App.css';
 import React, { useState } from 'react'
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Movies from './components/Movies/Movies';
 import SavedMovies from './components/SavedMovies/SavedMovies'
-import Footer from './components/Footer/Footer';
 import Profile from './components/Profile/Profile';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Background from './components/Background/Background';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
-
-function PageWrapper ({ children, withHeader = true, withFooter = true, headerProps = {} }) {
-  return (
-    <>
-      {withHeader && <Header {...headerProps} />}
-      {children}
-      {withFooter && <Footer />}
-    </>
-  )
-}
+import PageWrapper from './components/PageWrapper/PageWrapper';
 
 function App() {
   const [isMenuVisible, setMenuVisibility] = useState(false)

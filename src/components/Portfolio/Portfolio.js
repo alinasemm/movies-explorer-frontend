@@ -4,7 +4,7 @@ import portfolioLinkIcon from '../../images/portfolio-link-icon.svg';
 function Portfolio() {
   return (
     <div className='portfolio'>
-      <h3 className='portfolio__tittle'>Портфолио</h3>
+      <h3 className='portfolio__title'>Портфолио</h3>
       <div className='portfolio__links'>
         <div className='portfolio__link'>
           <a href='#' className='portfolio__link-name'>Статичный сайт</a>

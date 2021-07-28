@@ -36,3 +36,7 @@
 @import './components/EditAndExitButton/EditAndExitButton.css';
 @import './components/Background/Background.css';
 @import './components/BurgerButton/BurgerButton.css';
+@import './components/MajorTitle/MajorTitle.css';
+@import './components/Title/Title.css';
+@import './components/Subtitle/Subtitle.css';
+@import './components/Text/Text.css';

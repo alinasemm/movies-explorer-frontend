@@ -11,7 +11,7 @@ function MoviesCard({ thumbnail, name, duration, withDeleteButton }) {
       <img src={thumbnail} alt='превью фильма' className="movies__card-photo" />
       <div className='movies__content'>
         <div className='movies__card-text'>
-          <h3 className='movies__card-tittle'>{name}</h3>
+          <h3 className='movies__card-title'>{name}</h3>
           <span className='movies__card-time'>{duration}</span>
         </div>
         {button}

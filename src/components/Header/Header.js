@@ -10,11 +10,13 @@ function Header({ openMenu, closeMenu, headerClassName = '' }) {
   const location = useLocation();
   const history = useHistory();
 
+  const handleLogoClick = () => history.push('/');
+
   switch (location.pathname) {
     case '/':
       return (
         <header className='header'>
-          <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo' onClick={() => history.push('/')}/>
+          <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo' onClick={handleLogoClick}/>
           <div className='header__button-group'>
             <Button buttonClassName='button_medium button_transparent' text='Регистрация' />
             <Button buttonClassName='button_small' text='Войти' />
@@ -26,7 +28,7 @@ function Header({ openMenu, closeMenu, headerClassName = '' }) {
     case '/signin':
       return (
         <header className='header header_sign'>
-          <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo' onClick={() => history.push('/')}/>
+          <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo' onClick={handleLogoClick}/>
         </header>
       );
 
@@ -40,7 +42,7 @@ function Header({ openMenu, closeMenu, headerClassName = '' }) {
       return (
         <header className='header header_movies'>
           <div className='header__main'>
-            <img alt='логотип страницы о Проекте' src={headerLogo} className="header__logo" onClick={() => history.push('/')}/>
+            <img alt='логотип страницы о Проекте' src={headerLogo} className="header__logo" onClick={handleLogoClick}/>
             <Navigation links={links} className='navigation_horizontal' />
           </div>
           <BurgerButton onClick={openMenu} />
