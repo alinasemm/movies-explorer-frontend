@@ -66,30 +66,12 @@
 }
 
 @media screen and (max-width: 1018px) {
-  .user-info {
+  .user-info_movies {
     display: none;
   }
-  /* .user-info_movies {
-    background-image: url('../../images/header-movies-button-menu.svg');
-    width: 44px;
-    height: 44px;
-  } */
-
-  /* .user-info__text_movies {
-    display: none;
-  }
-
-  .user-info__button_movies {
-    display: none;
-  } */
 }
 
 @media screen and (max-width: 550px) {
-  .user-info_movies {
-    width: 40px;
-    height: 43px;
-  }
-
   .user-info__text {
     font-size: 10px;
     margin-right: 14px;
