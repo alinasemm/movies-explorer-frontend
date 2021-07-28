@@ -1,7 +1,7 @@
 import React from 'react'
 
-function CrossIcon ({ iconClassName='' }) {
-  return <button className={`cross-icon ${iconClassName}`} />
+function CrossIcon ({ iconClassName='', onClick }) {
+  return <button className={`cross-icon ${iconClassName}`} onClick={onClick} />
 }
 
 export default CrossIcon

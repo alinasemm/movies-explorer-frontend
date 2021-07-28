@@ -1,4 +1,5 @@
 import './App.css';
+import React, { useState } from 'react'
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
@@ -11,10 +12,10 @@ import PageNotFound from './components/PageNotFound/PageNotFound';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 
-function PageWrapper ({ children, withHeader = true, withFooter = true }) {
+function PageWrapper ({ children, withHeader = true, withFooter = true, headerProps = {} }) {
   return (
     <>
-      {withHeader && <Header />}
+      {withHeader && <Header {...headerProps} />}
       {children}
       {withFooter && <Footer />}
     </>
@@ -22,6 +23,11 @@ function PageWrapper ({ children, withHeader = true, withFooter = true }) {
 }
 
 function App() {
+  const [isMenuVisible, setMenuVisibility] = useState(false)
+
+  const openMenu = () => setMenuVisibility(true)
+  const closeMenu = () => setMenuVisibility(false)
+
   return (
     <div className='app'>
       <BrowserRouter>
@@ -32,18 +38,18 @@ function App() {
             </PageWrapper>
           </Route>
           <Route path="/movies">
-            <PageWrapper>
-              <Movies />
+            <PageWrapper headerProps={{ openMenu }}>
+              <Movies isMenuVisible={isMenuVisible} closeMenu={closeMenu} />
             </PageWrapper>
           </Route>
           <Route path="/saved-movies">
-            <PageWrapper>
-              <SavedMovies />
+            <PageWrapper headerProps={{ openMenu }}>
+              <SavedMovies isMenuVisible={isMenuVisible} closeMenu={closeMenu} />
             </PageWrapper>
           </Route>
           <Route exact path="/profile">
-            <PageWrapper withFooter={false}>
-              <Profile />
+            <PageWrapper withFooter={false} headerProps={{ openMenu }}>
+              <Profile isMenuVisible={isMenuVisible} closeMenu={closeMenu} />
             </PageWrapper>
           </Route>
           <Route exact path="/signup">

@@ -5,10 +5,10 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import MoreCards from '../MoreCards/MoreCards';
 import Background from '../Background/Background';
 
-function Movies() {
+function Movies({ isMenuVisible, closeMenu }) {
   return (
     <div className="movies">
-      <Background />
+      <Background isMenuVisible={isMenuVisible} closeMenu={closeMenu} />
       <SearchForm />
       <FilterCheckbox />
       <MoviesCardList />

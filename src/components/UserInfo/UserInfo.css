@@ -56,19 +56,22 @@
 }
 
 @media screen and (max-width: 1018px) {
-  .user-info_movies {
+  .user-info {
+    display: none;
+  }
+  /* .user-info_movies {
     background-image: url('../../images/header-movies-button-menu.svg');
     width: 44px;
     height: 44px;
-  }
+  } */
 
-  .user-info__text_movies {
+  /* .user-info__text_movies {
     display: none;
   }
 
   .user-info__button_movies {
     display: none;
-  }
+  } */
 }
 
 @media screen and (max-width: 550px) {
