@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import UserInfo from '../UserInfo/UserInfo';
 import BurgerButton from '../BurgerButton/BurgerButton'
+import Button from '../Button/Button'
 import headerLogo from '../../images/header-logo.svg';
 
 function Header({ headerClassName = '', openMenu }) {
@@ -14,11 +15,10 @@ function Header({ headerClassName = '', openMenu }) {
       return (
         <header className='header'>
           <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo' onClick={() => history.push('/')}/>
-          <UserInfo
-            buttonClassName='user-info__button_lending'
-            text='Регистрация'
-            buttonText='Войти'
-          />
+          <div className='header__button-group'>
+            <Button buttonClassName='button_medium button_transparent' text='Регистрация' />
+            <Button buttonClassName='button_small' text='Войти' />
+          </div>
         </header>
       );
 
@@ -46,8 +46,6 @@ function Header({ headerClassName = '', openMenu }) {
           <BurgerButton onClick={openMenu} />
           <UserInfo
             contClassName='user-info_movies'
-            textClassName='user-info__text_movies'
-            buttonClassName='user-info__button_menu user-info__button_movies'
             text='Аккаунт'
           />
         </header>

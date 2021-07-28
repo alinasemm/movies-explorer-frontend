@@ -23,8 +23,6 @@ function Menu({ closeMenu }) {
       />
       <UserInfo
         contClassName='user-info_menu'
-        textClassName='user-info__text_menu'
-        buttonClassName='user-info__button_menu'
         text='Аккаунт'
       />
     </div>

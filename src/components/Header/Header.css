@@ -30,6 +30,12 @@
   opacity: 0.7;
 }
 
+.header__button-group {
+  width: 203px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .header__main {
   display: flex;
   align-items: center;
@@ -54,5 +60,8 @@
     width: 100%;
     justify-content: center;
     display: flex;
+  }
+  .header__button-group {
+    width: 144px;
   }
 }
