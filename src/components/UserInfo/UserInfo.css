@@ -27,8 +27,6 @@
 
 
 .user-info__button {
-  outline: 0;
-  border: 0;
   border-radius: 6px;
 
   background-image: url('../../images/header-button-movies.svg');
@@ -38,7 +36,6 @@
 
   width: 30px;
   height: 30px;
-  padding: 0;
 }
 
 

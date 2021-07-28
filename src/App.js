@@ -8,7 +8,7 @@ import SavedMovies from './components/SavedMovies/SavedMovies'
 import Footer from './components/Footer/Footer';
 import Profile from './components/Profile/Profile';
 import PageNotFound from './components/PageNotFound/PageNotFound';
-
+import Background from './components/Background/Background';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 
@@ -28,6 +28,8 @@ function App() {
   const openMenu = () => setMenuVisibility(true)
   const closeMenu = () => setMenuVisibility(false)
 
+  const headerProps = { openMenu, closeMenu };
+
   return (
     <div className='app'>
       <BrowserRouter>
@@ -38,18 +40,18 @@ function App() {
             </PageWrapper>
           </Route>
           <Route path="/movies">
-            <PageWrapper headerProps={{ openMenu }}>
-              <Movies isMenuVisible={isMenuVisible} closeMenu={closeMenu} />
+            <PageWrapper headerProps={headerProps}>
+              <Movies />
             </PageWrapper>
           </Route>
           <Route path="/saved-movies">
-            <PageWrapper headerProps={{ openMenu }}>
-              <SavedMovies isMenuVisible={isMenuVisible} closeMenu={closeMenu} />
+            <PageWrapper headerProps={headerProps}>
+              <SavedMovies />
             </PageWrapper>
           </Route>
           <Route exact path="/profile">
-            <PageWrapper withFooter={false} headerProps={{ openMenu }}>
-              <Profile isMenuVisible={isMenuVisible} closeMenu={closeMenu} />
+            <PageWrapper withFooter={false} headerProps={headerProps}>
+              <Profile />
             </PageWrapper>
           </Route>
           <Route exact path="/signup">
@@ -66,7 +68,7 @@ function App() {
             <PageNotFound />
           </Route>
         </Switch>
-        
+        <Background isMenuVisible={isMenuVisible} closeMenu={closeMenu} />
       </BrowserRouter>
     </div>
   );

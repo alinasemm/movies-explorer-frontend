@@ -6,7 +6,7 @@ import BurgerButton from '../BurgerButton/BurgerButton'
 import Button from '../Button/Button'
 import headerLogo from '../../images/header-logo.svg';
 
-function Header({ headerClassName = '', openMenu }) {
+function Header({ openMenu, closeMenu, headerClassName = '' }) {
   const location = useLocation();
   const history = useHistory();
 
@@ -44,10 +44,7 @@ function Header({ headerClassName = '', openMenu }) {
             <Navigation links={links} className='navigation_horizontal' />
           </div>
           <BurgerButton onClick={openMenu} />
-          <UserInfo
-            contClassName='user-info_movies'
-            text='Аккаунт'
-          />
+          <UserInfo contClassName='user-info_movies' onClick={closeMenu} />
         </header>
       );
 

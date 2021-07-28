@@ -1,14 +1,26 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
-function Navigation ({ className = '', links = [], linksClassName='' }) {
+function Navigation ({ className = '', links = [], linksClassName = '', onClick }) {
+  const history = useHistory();
+
+  const handleClick = (event, pathname) => {
+    history.push(pathname);
+    onClick(event);
+  }
+
   return (
     <ul className={`navigation ${className}`}>
-      {links.map(({title='', className=''}, i) => {
+      {links.map(({ title = '', className = '', pathname = '/' }, i) => {
         return (
-          <li className={`navigation__link ${className} ${linksClassName}`} key={i}>
+          <li
+            key={i}
+            className={`navigation__link ${className} ${linksClassName}`}
+            onClick={(event) => handleClick(event, pathname)}
+          >
             {title}
           </li>
-        )
+        );
       })}
     </ul>
   )

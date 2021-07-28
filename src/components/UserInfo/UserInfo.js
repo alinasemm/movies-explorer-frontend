@@ -1,14 +1,19 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
-function UserInfo ({ contClassName = '', textClassName = '', buttonClassName = '', text = '', buttonText = '', onButtonClick }) {
+function UserInfo ({ onClick, contClassName = '', textClassName = '', buttonClassName = '' }) {
+  const history = useHistory();
+  const handleClick = (event) => {
+    history.push('/profile')
+    onClick(event);
+  };
+
   return (
-    <div className={`user-info ${contClassName}`}>
+    <div className={`user-info ${contClassName}`} onClick={handleClick}>
       <span className={`user-info__text ${textClassName}`}>
-        {text}
+        Аккаунт
       </span>
-      <button className={`user-info__button ${buttonClassName}`} onClick={onButtonClick}>
-        {buttonText}
-      </button>
+      <span className={`user-info__button ${buttonClassName}`} />
     </div>
   );
 }
