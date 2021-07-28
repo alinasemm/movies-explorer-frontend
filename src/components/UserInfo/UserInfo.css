@@ -2,6 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transition: opacity 300ms;
+}
+
+.user-info:hover {
+  opacity: 0.7;
 }
 
 .user-info_menu {
@@ -17,12 +23,6 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
-
-  cursor: pointer;
-}
-
-.user-info__text:hover {
-  opacity: 0.7;
 }
 
 

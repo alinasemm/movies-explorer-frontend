@@ -26,19 +26,17 @@ function Profile() {
   ];
 
   return (
-    <div className='sign-container'>
-      <Form
-        title='Привет, Виталий!'
-        greetingClassName='greeting_profile'
-        inputs={inputs}
-      >
-        <EditAndExitButton
-          editText='Редактировать'
-          exitText='Выйти'
-          onClick={() => history.push('/signup')}
-        />
-      </Form>
-    </div>
+    <Form
+      title='Привет, Виталий!'
+      greetingClassName='greeting_profile'
+      inputs={inputs}
+    >
+      <EditAndExitButton
+        editText='Редактировать'
+        exitText='Выйти'
+        onClick={() => history.push('/signup')}
+      />
+    </Form>
   );
 }
 

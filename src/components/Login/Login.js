@@ -23,22 +23,20 @@ function Login() {
   ];
 
   return (
-    <div className='sign-container'>
-      <Form
-        title='Рады видеть!'
-        inputs={inputs}
-      >
-        <Button 
-        text='Войти'
-        buttonClassName='button_with-margin'
-        />
-        <Link
-          text='Еще не зарегистрированы?'
-          linkText='Регистрация'
-          onClick={() => history.push('/signup')}
-        />
-      </Form>
-    </div>
+    <Form
+      title='Рады видеть!'
+      inputs={inputs}
+    >
+      <Button 
+      text='Войти'
+      buttonClassName='button_with-margin'
+      />
+      <Link
+        text='Еще не зарегистрированы?'
+        linkText='Регистрация'
+        onClick={() => history.push('/signup')}
+      />
+    </Form>
   );
 }
 

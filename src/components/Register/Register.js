@@ -28,19 +28,17 @@ function Register() {
   ];
 
   return (
-    <div className='sign-container'>
-      <Form
-        inputs={inputs}
-        title='Добро пожаловать!'
-      >
-        <Button text='Зарегистрироваться'/>
-        <Link
-          text='Уже зарегистрированы?'
-          linkText='Войти'
-          onClick={() => history.push('/signin')}
-        />
-      </Form>
-    </div>
+    <Form
+      inputs={inputs}
+      title='Добро пожаловать!'
+    >
+      <Button text='Зарегистрироваться'/>
+      <Link
+        text='Уже зарегистрированы?'
+        linkText='Войти'
+        onClick={() => history.push('/signin')}
+      />
+    </Form>
   );
 }
 

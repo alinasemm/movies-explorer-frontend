@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React /*, { useState } */ from 'react';
 
 function Input({ label, inputClassName='', labelClassName='', initialErrorMessage = '', contClassName = '', ...props }) {
-  const [errorMessage, setErrorMessage] = useState(initialErrorMessage);
+  // const [errorMessage, setErrorMessage] = useState(initialErrorMessage);
+  const errorMessage = initialErrorMessage;
 
   return (
     <div className={`input-container ${contClassName}`}>
