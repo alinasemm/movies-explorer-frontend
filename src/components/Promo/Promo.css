@@ -44,7 +44,8 @@
 }
 
 .promo__button {
-  padding: 0;
+  text-decoration: none;
+  color: #000000;
   width: 129px;
   height: 36px;
   margin-bottom: 25px;
@@ -55,6 +56,10 @@
   font-size: 12px;
   line-height: 16px;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .promo__button:hover {

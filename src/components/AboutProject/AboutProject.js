@@ -5,7 +5,7 @@ import Text from '../Text/Text';
 function AboutProject() {
   return (
     <div className='about-project'>
-      <MajorTitle>О проекте</MajorTitle>
+      <MajorTitle id='about-project'>О проекте</MajorTitle>
       <div className='about-project__content'>
         <div className='about-project__description'>
           <h2 className='about-project__title'>Дипломный проект включал 5 этапов</h2>

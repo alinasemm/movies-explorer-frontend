@@ -12,7 +12,9 @@ function Promo() {
         <h2 className='promo__text'>
           Листайте ниже, чтобы узнать больше про этот проект и его создателя.
         </h2>
-        <button className='promo__button'>Узнать больше</button>
+        <a className='promo__button' href='#about-project'>
+          Узнать больше
+        </a>
       </div>
       <img alt='промо изображение' src={promoImage} className='promo__image' />
     </div>

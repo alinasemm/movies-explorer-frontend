@@ -29,7 +29,7 @@ function Login() {
     >
       <Button 
       text='Войти'
-      buttonClassName='button_with-margin'
+      buttonClassName='button_with-margin button_large'
       />
       <Link
         text='Еще не зарегистрированы?'

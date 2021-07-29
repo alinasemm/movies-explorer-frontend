@@ -45,6 +45,11 @@
   box-sizing: border-box;
   background-color: #F9F9F9;
   outline: 0;
+  cursor: pointer;
+}
+
+.movies__card-button:hover {
+  opacity: 0.8;
 }
 
 

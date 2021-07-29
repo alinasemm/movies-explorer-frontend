@@ -17,6 +17,12 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.portfolio__link:hover {
+  opacity: 0.7;
 }
 
 .portfolio__link-name {

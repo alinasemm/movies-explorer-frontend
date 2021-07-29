@@ -6,7 +6,9 @@ function Navigation ({ className = '', links = [], linksClassName = '', onClick 
 
   const handleClick = (event, pathname) => {
     history.push(pathname);
-    onClick(event);
+    if (onClick) {
+      onClick(event);
+    }
   }
 
   return (

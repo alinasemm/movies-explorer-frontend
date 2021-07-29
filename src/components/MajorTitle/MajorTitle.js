@@ -1,8 +1,8 @@
 import React from 'react';
 
-function MajorTitle ({ children }) {
+function MajorTitle ({ children, id }) {
   return (
-    <h2 className='major-title'>
+    <h2 className='major-title' id={id}>
       {children}
     </h2>
   );
