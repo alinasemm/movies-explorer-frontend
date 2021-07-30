@@ -45,8 +45,18 @@
   line-height: 34px;
   text-align: center;
   color: #A0A0A0;
+  color: #000000;
   margin: 0;
   margin-bottom: 15px;
+  border: 0;
+  width: 60%;
+  cursor: pointer;
+  outline: 0;
+}
+
+.search-form__title::placeholder {
+  color: #A0A0A0;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 1018px) {
