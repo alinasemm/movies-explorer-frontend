@@ -7,7 +7,7 @@ function AboutProject() {
     <div className='about-project'>
       <MajorTitle id='about-project'>О проекте</MajorTitle>
       <div className='about-project__content'>
-        <div className='about-project__description'>
+        <div className='about-project__description about-project__description_right'>
           <h2 className='about-project__title'>Дипломный проект включал 5 этапов</h2>
           <Text>
             Составление плана, работу над бэкендом, 
@@ -16,7 +16,7 @@ function AboutProject() {
           </Text>
         </div>
 
-        <div className='about-project__description'>
+        <div className='about-project__description about-project__description_left'>
           <h2 className='about-project__title'>На выполнение диплома ушло 5 недель</h2>
           <Text>
             У каждого этапа был мягкий и жёсткий дедлайн, 
