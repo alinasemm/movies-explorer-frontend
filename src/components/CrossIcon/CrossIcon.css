@@ -1,0 +1,29 @@
+.cross-icon {
+  background-image: url('../../images/icon-close-movies.svg');
+  border: none;
+  height: 16px;
+  width: 16px;
+  padding: 0;
+  outline: 0;
+  background-color: transparent;
+  background-position: center;
+  cursor: pointer;
+}
+
+.cross-icon:hover {
+  opacity: 0.8;
+}
+
+.cross-icon_menu {
+  background-image: url('../../images/icon-close-menu.svg');
+  align-self: flex-end;
+  height: 22px;
+  width: 22px;
+  margin: 22.44px 22.44px 77.44px 0px;
+}
+
+@media screen and (max-width: 550px) {
+  .cross-icon_menu {
+    margin: 13.44px 13.44px 99.44px 0px;
+  }
+}

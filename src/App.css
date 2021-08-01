@@ -1,0 +1,7 @@
+.app {
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  box-sizing: border-box;
+}

@@ -1,0 +1,40 @@
+.title {
+  margin: 0;
+  
+  display: flex;
+  justify-content: center;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.title_position {
+  justify-content: right;
+  margin-bottom: 18px;
+}
+
+@media screen and (max-width: 1018px) {
+  .title_size {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title_size {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+

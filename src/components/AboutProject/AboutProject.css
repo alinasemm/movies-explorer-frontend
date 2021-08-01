@@ -1,0 +1,139 @@
+.about-project {
+  margin: 110px 70px;
+}
+
+.about-project__content {
+  margin-top: 70px;
+  margin-bottom: 110px;
+  display: flex;
+  justify-content:space-between;
+}
+
+.about-project__description {
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+}
+
+.about-project__description_right {
+  padding-right: 5px;
+}
+
+.about-project__description_left {
+  padding-left: 5px;
+}
+
+.about-project__title {
+  margin: 0;
+  margin-bottom: 26px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+}
+
+.about-project__timeline {
+  display: flex;
+}
+
+.about-project__timeline-time {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+}
+
+.about-project__timeline-backend {
+  width: 20%;
+}
+
+.about-project__timeline-time_backend {
+	background: black;
+  color: #FFFFFF;
+}
+
+.about-project__timeline-frontend {
+  width: 80%;
+}
+
+.about-project__timeline-time_frontend {
+  background: #F2F2F2;
+  color: #000000;
+}
+
+.about-project__timeline-info {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #A0A0A0;
+  margin-top: 14px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1130px) {
+  .about-project {
+    margin: 90px 50px;
+  }
+
+  .about-project__description {
+    width: 319px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .about-project {
+    margin: 70px 18px;
+  }
+
+  .about-project__description {
+    width: 284px;
+  }
+
+  .about-project__description:first-child {
+    margin-bottom: 56px;
+  }
+
+  .about-project__description_right {
+    padding-right: 0px;
+  }
+  
+  .about-project__description_left {
+    padding-left: 0px;
+  }
+
+  .about-project__title {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 16px;
+  }
+
+  .about-project__content {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction:column;
+  }
+
+  .about-project__timeline-time {
+    font-size: 11px;
+  }
+
+  .about-project__timeline-backend {
+    width: 35.2%;
+  }
+
+  .about-project__timeline-frontend {
+    width: 64.8%;
+  }
+
+  .about-project__timeline-info {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}
+

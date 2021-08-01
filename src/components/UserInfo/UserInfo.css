@@ -1,0 +1,54 @@
+.user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 300ms;
+}
+
+.user-info:hover {
+  opacity: 0.7;
+}
+
+.user-info_menu {
+  margin-top: auto;
+  margin-bottom: 92px;
+}
+
+
+.user-info__text {
+  margin-right: 13px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+
+.user-info__button {
+  border-radius: 6px;
+
+  background-image: url('../../images/header-button-movies.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #F9F9F9;
+  background-size: 10px 10px;
+
+  width: 30px;
+  height: 30px;
+}
+
+
+@media screen and (max-width: 1018px) {
+  .user-info_movies {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 550px) {
+  .user-info_menu {
+    margin-bottom: 48px;
+  }
+}

@@ -1,0 +1,43 @@
+.buttons {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  margin-top: 220px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.edit-button {
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.edit-button:hover {
+  opacity: 0.6;
+}
+
+.exit-button {
+  cursor: pointer;
+  color: #FF4062;
+}
+
+.exit-button:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 800px) {
+  .buttons {
+    margin-top: 210px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .buttons {
+    margin-top: 379px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

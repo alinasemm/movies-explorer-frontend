@@ -1,0 +1,50 @@
+.sign-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  width: 396px;
+  display: flex;
+  flex-direction: column;
+}
+
+.greeting {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 0;
+  margin-top: 40px;
+}
+
+.greeting_profile {
+  margin-top: 74px;
+  text-align: center;
+  margin-bottom: 123px;
+}
+
+@media screen and (max-width: 800px) {
+  .greeting_profile {
+    margin-top: 236px;
+    margin-bottom: 96px
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .greeting {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .greeting_profile {
+    margin-top: 70px;
+    margin-bottom: 80px;
+  }
+
+  .form {
+    width: 260px;
+  }
+}
+
