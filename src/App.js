@@ -12,7 +12,8 @@ import Login from './components/Login/Login';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 
 function App() {
-  const [isMenuVisible, setMenuVisibility] = useState(false)
+  const [isMenuVisible, setMenuVisibility] = useState(false);
+  const [movies, setMovies] = useState([]);
 
   const openMenu = () => setMenuVisibility(true)
   const closeMenu = () => setMenuVisibility(false)
@@ -30,7 +31,7 @@ function App() {
           </Route>
           <Route path="/movies">
             <PageWrapper headerProps={headerProps}>
-              <Movies />
+              <Movies movies={movies} setMovies={setMovies} />
             </PageWrapper>
           </Route>
           <Route path="/saved-movies">

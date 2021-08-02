@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import MoreCards from '../MoreCards/MoreCards';
 
-function Movies() {
+function Movies({ movies, setMovies }) {
+   const [errorMessage, setErrorMessage] = useState('');
+
   return (
     <div className="movies">
-      <SearchForm />
+      <SearchForm setErrorMessage={setErrorMessage} setMovies={setMovies}/>
       <FilterCheckbox />
-      <MoviesCardList />
-      <MoreCards />
+      {errorMessage
+        ? errorMessage
+        : (
+          <>
+            <MoviesCardList movies={movies} />
+            <MoreCards />
+          </>
+        )}
     </div>
   );
 }

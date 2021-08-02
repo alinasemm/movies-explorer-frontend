@@ -23,10 +23,15 @@
   line-height: 16px;
   margin: 0;
   margin-bottom: 10px;
+  width: 216px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .movies__card-photo {
   width: 270px;
+  height: 151px;
 }
 
 .movies__card-time {

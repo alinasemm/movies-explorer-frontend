@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import previewCard from '../../images/preview-1.png';
 import MoviesCard from '../MoviesCard/MoviesCard';
+import { moviesUrl } from '../../utils/moviesApi'
 
-function MoviesCardList({ withDeleteButton }) {
+function MoviesCardList({ withDeleteButton, movies }) {
   const [cardsLength, setCardsLength] = useState(16)
 
   const updateCardsLength = () => {
@@ -23,12 +23,12 @@ function MoviesCardList({ withDeleteButton }) {
     }
   }, []);
 
-  const movies = Array.from({ length: cardsLength }).map((_, i) => ({
-    thumbnail: previewCard,
-    name: '33 слова о дизайне',
-    id: i,
-    duration: '1ч42м',
-  }));
+  // const movies = Array.from({ length: cardsLength }).map((_, i) => ({
+  //   thumbnail: previewCard,
+  //   name: '33 слова о дизайне',
+  //   id: i,
+  //   duration: '1ч42м',
+  // }));
 
   return (
     <div className="movies__card-list">
@@ -36,8 +36,8 @@ function MoviesCardList({ withDeleteButton }) {
           return (
             <MoviesCard
               key={movie.id}
-              name={movie.name}
-              thumbnail={movie.thumbnail}
+              name={movie.nameRU}
+              thumbnail={`${moviesUrl}${movie.image.url}`}
               duration={movie.duration}
               withDeleteButton={withDeleteButton}
             />
