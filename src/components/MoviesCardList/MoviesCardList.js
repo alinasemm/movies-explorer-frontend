@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
+import MoreCards from '../MoreCards/MoreCards';
 import { moviesUrl } from '../../utils/moviesApi'
 
 function MoviesCardList({ withDeleteButton, movies }) {
@@ -30,6 +31,10 @@ function MoviesCardList({ withDeleteButton, movies }) {
   //   duration: '1ч42м',
   // }));
 
+  if(movies.length === 0) {
+    return null;
+  }
+
   return (
     <div className="movies__card-list">
         {movies.map((movie) => {
@@ -43,6 +48,7 @@ function MoviesCardList({ withDeleteButton, movies }) {
             />
           )
         })}
+        <MoreCards />
       </div>
   );
 }

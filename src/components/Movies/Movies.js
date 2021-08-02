@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import MoreCards from '../MoreCards/MoreCards';
 
 function Movies({ movies, setMovies }) {
    const [errorMessage, setErrorMessage] = useState('');
@@ -16,7 +15,6 @@ function Movies({ movies, setMovies }) {
         : (
           <>
             <MoviesCardList movies={movies} />
-            <MoreCards />
           </>
         )}
     </div>
