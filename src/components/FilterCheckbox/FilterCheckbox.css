@@ -13,17 +13,28 @@
   margin-left: 12px;
 }
 
-.filter-checkbox__button {
+.filter-checkbox__background {
   border: 0;
   width: 36px;
   height: 20px;
-  background-color: transparent;
-  background-image: url('../../images/smalltumb-on.svg');
+  border-radius: 20px;
+  background-color: #2BE080;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-.filter-checkbox__button:hover {
+.filter-checkbox__background:hover {
   opacity: 0.8;
+}
+
+.filter-checkbox__circle {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: white;
+  width: 8px;
+  height: 8px;
+  margin-left: 22px;
 }
 
 @media screen and (max-width: 550px) {

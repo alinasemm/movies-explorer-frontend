@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { getMovies } from '../../utils/moviesApi';
 
 const errorMessage = 'Нужно ввести ключевое слово';
 
-function SearchForm({ setErrorMessage, setMovies }) {
-  const [movieName, setMovieName] = useState('');
+function SearchForm({ setErrorMessage, setMovies, movieName, setMovieName}) {
 
   const handleInput = (event) => {
     setMovieName(event.target.value);

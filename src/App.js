@@ -10,10 +10,21 @@ import Background from './components/Background/Background';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import PageWrapper from './components/PageWrapper/PageWrapper';
+import useFilter from './ useFilter';
 
 function App() {
   const [isMenuVisible, setMenuVisibility] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const [movieName, setMovieName] = useState('');
+  
   const [movies, setMovies] = useState([]);
+  const filteredMovies = useFilter({ 
+    movies, 
+    isShortMoviesEnabled: false, 
+    key: movieName, 
+    setErrorMessage 
+  });
 
   const openMenu = () => setMenuVisibility(true)
   const closeMenu = () => setMenuVisibility(false)
@@ -31,7 +42,14 @@ function App() {
           </Route>
           <Route path="/movies">
             <PageWrapper headerProps={headerProps}>
-              <Movies movies={movies} setMovies={setMovies} />
+              <Movies 
+                movies={filteredMovies} 
+                setMovies={setMovies}
+                errorMessage={errorMessage} 
+                setErrorMessage={setErrorMessage}
+                movieName={movieName}
+                setMovieName={setMovieName}
+              />
             </PageWrapper>
           </Route>
           <Route path="/saved-movies">
