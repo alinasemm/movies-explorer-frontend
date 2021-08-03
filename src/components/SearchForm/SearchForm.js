@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function SearchForm({ onSubmit }) {
-  const [movieName, setMovieName] = useState('');
-
+function SearchForm({ movieName, setMovieName, onSubmit }) {
   const handleInput = (event) => {
     setMovieName(event.target.value);
   }

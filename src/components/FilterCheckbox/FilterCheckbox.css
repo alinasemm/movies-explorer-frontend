@@ -2,6 +2,11 @@
   padding: 30px 0 49px 0;
   display: flex;
   justify-content: center;
+  cursor: pointer;
+}
+
+.filter-checkbox:hover {
+  opacity: 0.8;
 }
 
 .filter-checkbox__title {
@@ -19,13 +24,13 @@
   height: 20px;
   border-radius: 20px;
   background-color: #2BE080;
-  cursor: pointer;
   display: flex;
   align-items: center;
+  transition: background-color 300ms;
 }
 
-.filter-checkbox__background:hover {
-  opacity: 0.8;
+.filter-checkbox__background_inactive {
+  background-color: #EBEBEB;
 }
 
 .filter-checkbox__circle {
@@ -35,6 +40,12 @@
   width: 8px;
   height: 8px;
   margin-left: 22px;
+  transition: margin-left 300ms;
+}
+
+.filter-checkbox__circle_inactive {
+  background-color: #F5F5F5;
+  margin-left: 6px;
 }
 
 @media screen and (max-width: 550px) {

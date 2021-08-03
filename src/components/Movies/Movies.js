@@ -3,15 +3,32 @@ import SearchForm from '../SearchForm/SearchForm';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import Preloader from '../Preloader/Preloader';
 
-function Movies({ movies, errorMessage, handleMoviesSearch }) {
+function Movies({
+  isShortMoviesEnabled,
+  setIsShortMoviesEnabled,
+  movies,
+  errorMessage,
+  handleMoviesSearch,
+  isLoading,
+  movieName,
+  setMovieName
+}) {
   return (
     <div className="movies">
-      <SearchForm onSubmit={handleMoviesSearch} />
-      <FilterCheckbox />
-      {errorMessage
-        ? <ErrorMessage message={errorMessage} />
-        : <MoviesCardList movies={movies} />}
+      <SearchForm
+        movieName={movieName}
+        setMovieName={setMovieName}
+        onSubmit={handleMoviesSearch}
+      />
+      <FilterCheckbox 
+        isShortMoviesEnabled={isShortMoviesEnabled}
+        setIsShortMoviesEnabled={setIsShortMoviesEnabled}
+      />
+      {isLoading && <Preloader />}
+      {!isLoading && errorMessage && <ErrorMessage message={errorMessage} />}
+      {!isLoading && !errorMessage && <MoviesCardList movies={movies} />}
     </div>
   );
 }

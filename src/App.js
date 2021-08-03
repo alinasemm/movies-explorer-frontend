@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import { getMovies } from './utils/moviesApi'
@@ -15,30 +15,46 @@ import Login from './components/Login/Login';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 
 import filterMovies from './filterMovies';
+import { useInitialRender } from './useInitialRender';
 
 function App() {
   const [isMenuVisible, setMenuVisibility] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isShortMoviesEnabled, setIsShortMoviesEnabled] = useState(true);
+  const [movieName, setMovieName] = useState('');
 
   const [movies, setMovies] = useState([]);
-  const handleMoviesSearch = (key) => {
+  const handleMoviesSearch = () => {
     setErrorMessage('');
 
-    if (!key) {
+    if (!movieName) {
       setErrorMessage('Нужно ввести ключевое слово');
       return;
     }
 
+    setIsLoading(true);
+
     getMovies()
-      .then((movies) => filterMovies(movies, key, true))
+      .then((movies) => filterMovies(movies, movieName, isShortMoviesEnabled))
       .then((filteredMovies) => {
         if (filteredMovies.length === 0) {
           setErrorMessage('Ничего не найдено');
         } else {
           setMovies(filteredMovies);
         }
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
+
+  const isInitialRender = useInitialRender();
+  useEffect(() => {
+    if (!isInitialRender) {
+      handleMoviesSearch();
+    }
+  }, [isShortMoviesEnabled])
 
   const openMenu = () => setMenuVisibility(true)
   const closeMenu = () => setMenuVisibility(false)
@@ -60,6 +76,11 @@ function App() {
                 movies={movies}
                 errorMessage={errorMessage} 
                 handleMoviesSearch={handleMoviesSearch}
+                isLoading={isLoading}
+                isShortMoviesEnabled={isShortMoviesEnabled}
+                setIsShortMoviesEnabled={setIsShortMoviesEnabled}
+                movieName={movieName}
+                setMovieName={setMovieName}
               />
             </PageWrapper>
           </Route>
