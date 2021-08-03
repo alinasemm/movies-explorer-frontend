@@ -2,25 +2,16 @@ import React from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
-function Movies({ movies, setMovies, errorMessage, setErrorMessage, movieName, setMovieName }) {
-
+function Movies({ movies, errorMessage, handleMoviesSearch }) {
   return (
     <div className="movies">
-      <SearchForm 
-        setErrorMessage={setErrorMessage} 
-        setMovies={setMovies}
-        movieName={movieName}
-        setMovieName={setMovieName}
-      />
+      <SearchForm onSubmit={handleMoviesSearch} />
       <FilterCheckbox />
       {errorMessage
-        ? errorMessage
-        : (
-          <>
-            <MoviesCardList movies={movies} />
-          </>
-        )}
+        ? <ErrorMessage message={errorMessage} />
+        : <MoviesCardList movies={movies} />}
     </div>
   );
 }

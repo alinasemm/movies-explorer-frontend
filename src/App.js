@@ -1,6 +1,9 @@
 import './App.css';
 import React, { useState } from 'react'
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
+
+import { getMovies } from './utils/moviesApi'
+
 import Main from './components/Main/Main';
 import Movies from './components/Movies/Movies';
 import SavedMovies from './components/SavedMovies/SavedMovies'
@@ -10,21 +13,32 @@ import Background from './components/Background/Background';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import PageWrapper from './components/PageWrapper/PageWrapper';
-import useFilter from './ useFilter';
+
+import filterMovies from './filterMovies';
 
 function App() {
   const [isMenuVisible, setMenuVisibility] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const [movieName, setMovieName] = useState('');
-  
   const [movies, setMovies] = useState([]);
-  const filteredMovies = useFilter({ 
-    movies, 
-    isShortMoviesEnabled: false, 
-    key: movieName, 
-    setErrorMessage 
-  });
+  const handleMoviesSearch = (key) => {
+    setErrorMessage('');
+
+    if (!key) {
+      setErrorMessage('Нужно ввести ключевое слово');
+      return;
+    }
+
+    getMovies()
+      .then((movies) => filterMovies(movies, key, true))
+      .then((filteredMovies) => {
+        if (filteredMovies.length === 0) {
+          setErrorMessage('Ничего не найдено');
+        } else {
+          setMovies(filteredMovies);
+        }
+      });
+  };
 
   const openMenu = () => setMenuVisibility(true)
   const closeMenu = () => setMenuVisibility(false)
@@ -43,12 +57,9 @@ function App() {
           <Route path="/movies">
             <PageWrapper headerProps={headerProps}>
               <Movies 
-                movies={filteredMovies} 
-                setMovies={setMovies}
+                movies={movies}
                 errorMessage={errorMessage} 
-                setErrorMessage={setErrorMessage}
-                movieName={movieName}
-                setMovieName={setMovieName}
+                handleMoviesSearch={handleMoviesSearch}
               />
             </PageWrapper>
           </Route>

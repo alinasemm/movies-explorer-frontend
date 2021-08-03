@@ -1,9 +1,7 @@
-import React from 'react';
-import { getMovies } from '../../utils/moviesApi';
+import React, { useState } from 'react';
 
-const errorMessage = 'Нужно ввести ключевое слово';
-
-function SearchForm({ setErrorMessage, setMovies, movieName, setMovieName}) {
+function SearchForm({ onSubmit }) {
+  const [movieName, setMovieName] = useState('');
 
   const handleInput = (event) => {
     setMovieName(event.target.value);
@@ -11,15 +9,7 @@ function SearchForm({ setErrorMessage, setMovies, movieName, setMovieName}) {
 
   function handleSubmit(event) {  
     event.preventDefault();
-
-    if (movieName) {
-      setErrorMessage('');
-      getMovies().then((result) => {
-        setMovies(result);
-      });
-    } else {
-      setErrorMessage(errorMessage);
-    }
+    onSubmit(movieName);
   } 
 
   return (
