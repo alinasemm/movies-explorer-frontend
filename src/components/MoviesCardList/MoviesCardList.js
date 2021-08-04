@@ -53,6 +53,7 @@ function MoviesCardList({ withDeleteButton, movies }) {
               thumbnail={`${moviesUrl}${movie.image.url}`}
               duration={formatDuration(movie.duration)}
               withDeleteButton={withDeleteButton}
+              trailerLink={movie.trailerLink}
             />
           )
         })}

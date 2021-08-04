@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import CrossIcon from '../CrossIcon/CrossIcon';
 
-function MoviesCard({ thumbnail, name, duration, withDeleteButton }) {
+function MoviesCard({ thumbnail, name, duration, withDeleteButton, trailerLink }) {
 
     const [isSelected, setSelectedState] = useState(false);
-    const toggleSelected = () => setSelectedState(!isSelected);
+    const toggleSelected = (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      setSelectedState(!isSelected);
+    }
 
     const button = withDeleteButton
     ? <CrossIcon />
@@ -14,7 +18,7 @@ function MoviesCard({ thumbnail, name, duration, withDeleteButton }) {
       />;
 
   return (
-    <div className="movies__card">
+    <a href={trailerLink} className="movies__card" target="__black" rel='noreferrer'>
       <img src={thumbnail} alt='превью фильма' className="movies__card-photo" />
       <div className='movies__content'>
         <div className='movies__card-text'>
@@ -23,7 +27,7 @@ function MoviesCard({ thumbnail, name, duration, withDeleteButton }) {
         </div>
         {button}
       </div>
-    </div>
+    </a>
   );
 }
 
