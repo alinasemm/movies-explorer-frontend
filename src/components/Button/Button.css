@@ -19,6 +19,12 @@
   opacity: 0.7;
 }
 
+.button_disabled {
+  pointer-events: none;
+  cursor: default;
+  background-color: aqua;
+}
+
 .button_small {
   width: 76px;
   height: 32px;
