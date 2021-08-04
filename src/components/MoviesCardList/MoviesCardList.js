@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import MoreCards from '../MoreCards/MoreCards';
-import { moviesUrl } from '../../utils/moviesApi'
+import { moviesUrl } from '../../utils/moviesApi';
+import { formatDuration } from '../../utils/formatDuration';
 
 function MoviesCardList({ withDeleteButton, movies }) {
   const [cardsLength, setCardsLength] = useState(16);
@@ -50,7 +51,7 @@ function MoviesCardList({ withDeleteButton, movies }) {
               key={movie.id}
               name={movie.nameRU}
               thumbnail={`${moviesUrl}${movie.image.url}`}
-              duration={movie.duration}
+              duration={formatDuration(movie.duration)}
               withDeleteButton={withDeleteButton}
             />
           )
