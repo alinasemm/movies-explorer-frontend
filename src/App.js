@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
-import { getMovies } from './utils/moviesApi'
+import * as api from './utils/moviesApi'
 
 import Main from './components/Main/Main';
 import Movies from './components/Movies/Movies';
@@ -14,36 +14,27 @@ import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 
-import filterMovies from './filterMovies';
-import { useInitialRender } from './useInitialRender';
+import { filterMovies } from './utils/filterMovies';
+import { useLocalStorageState } from './utils/useLocalStorageState';
+import { useInitialRender } from './utils/useInitialRender';
+
+
 
 function App() {
   const [isMenuVisible, setMenuVisibility] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isShortMoviesEnabled, setIsShortMoviesEnabled] = useState(true);
-  const [movieName, setMovieName] = useState('');
+  const [isShortMoviesEnabled, setIsShortMoviesEnabled] = useLocalStorageState(true, 'isShortMoviesEnabled');
+  const [movieName, setMovieName] = useLocalStorageState('', 'movieName');
 
-  const [movies, setMovies] = useState([]);
-  const handleMoviesSearch = () => {
-    setErrorMessage('');
+  const [movies, setMovies] = useLocalStorageState([], 'movies');
+  const [filteredMovies, setFilteredMovies] = useLocalStorageState([], 'filteredMovies');
 
-    if (!movieName) {
-      setErrorMessage('Нужно ввести ключевое слово');
-      return;
-    }
-
+  const getMovies = () => {
     setIsLoading(true);
 
-    getMovies()
-      .then((movies) => filterMovies(movies, movieName, isShortMoviesEnabled))
-      .then((filteredMovies) => {
-        if (filteredMovies.length === 0) {
-          setErrorMessage('Ничего не найдено');
-        } else {
-          setMovies(filteredMovies);
-        }
-      })
+    return api.getMovies()
+      .then(setMovies)
       .catch((error) => {
         console.log(error);
         setErrorMessage([
@@ -55,14 +46,39 @@ function App() {
       .finally(() => {
         setIsLoading(false);
       });
-  };
+  }
+
+  const applyFilter = () => {
+    const nextFilteredMovies = filterMovies(movies, movieName, isShortMoviesEnabled);
+    if (nextFilteredMovies.length === 0) {
+      setErrorMessage('Ничего не найдено');
+    } else {
+      setFilteredMovies(nextFilteredMovies);
+    }
+  }
+
+  const handleMoviesSearch = () => {
+    setErrorMessage('');
+
+    if (!movieName) {
+      setErrorMessage('Нужно ввести ключевое слово');
+      return;
+    }
+
+    if (movies.length === 0) {
+      getMovies();
+      return;
+    }
+
+    applyFilter();
+  }
 
   const isInitialRender = useInitialRender();
   useEffect(() => {
-    if (!isInitialRender) {
-      handleMoviesSearch();
+    if (!isInitialRender && movies.length > 0) {
+      applyFilter();
     }
-  }, [isShortMoviesEnabled])
+  }, [movies, isShortMoviesEnabled]);
 
   const openMenu = () => setMenuVisibility(true)
   const closeMenu = () => setMenuVisibility(false)
@@ -81,7 +97,7 @@ function App() {
           <Route path="/movies">
             <PageWrapper headerProps={headerProps}>
               <Movies 
-                movies={movies}
+                movies={filteredMovies}
                 errorMessage={errorMessage} 
                 handleMoviesSearch={handleMoviesSearch}
                 isLoading={isLoading}

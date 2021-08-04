@@ -1,6 +1,6 @@
 const shortMovieDuration = 40;
 
-export default function filterMovies (movies, key, isShortMoviesEnabled) {
+export function filterMovies (movies, key, isShortMoviesEnabled) {
   const lowerKey = key.toLowerCase();
 
   return movies.filter((movie) => {
