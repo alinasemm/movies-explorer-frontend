@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import MoreCards from '../MoreCards/MoreCards';
-import { moviesUrl } from '../../utils/moviesApi';
-import { formatDuration } from '../../utils/formatDuration';
 
-function MoviesCardList({ withDeleteButton, movies }) {
+function MoviesCardList({ movies, likes = {}, saveMovie, deleteMovie, withDeleteButton }) {
   const [cardsLength, setCardsLength] = useState(16);
   const [cardsStep, setCardsStep] = useState(4);
 
@@ -36,8 +34,6 @@ function MoviesCardList({ withDeleteButton, movies }) {
     }
   }, []);
 
-  console.log({ cardsStep, cardsLength, moviesLength: movies.length })
-
   if(movies.length === 0) {
     return null;
   }
@@ -48,12 +44,12 @@ function MoviesCardList({ withDeleteButton, movies }) {
         {movies.slice(0, cardsLength).map((movie) => {
           return (
             <MoviesCard
-              key={movie.id}
-              name={movie.nameRU}
-              thumbnail={`${moviesUrl}${movie.image.url}`}
-              duration={formatDuration(movie.duration)}
+              key={movie.movieId}
+              id={likes[`${movie.movieId}`] || movie._id}
+              movie={movie}
+              saveMovie={saveMovie}
+              deleteMovie={deleteMovie}
               withDeleteButton={withDeleteButton}
-              trailerLink={movie.trailerLink}
             />
           )
         })}

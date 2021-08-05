@@ -5,7 +5,9 @@ function UserInfo ({ onClick, contClassName = '', textClassName = '', buttonClas
   const history = useHistory();
   const handleClick = (event) => {
     history.push('/profile')
-    onClick(event);
+    if (onClick) {
+      onClick(event);
+    }
   };
 
   return (

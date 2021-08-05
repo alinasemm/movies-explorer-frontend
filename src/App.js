@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import Main from './components/Main/Main';
@@ -11,7 +11,9 @@ import Background from './components/Background/Background';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import PageWrapper from './components/PageWrapper/PageWrapper';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
+import * as mainApi from './utils/mainApi'
 import { useMovies } from './utils/useMovies';
 import { useLocalStorageState } from './utils/useLocalStorageState';
 import { useMenu } from './utils/useMenu';
@@ -36,6 +38,58 @@ function App() {
     isShortMoviesEnabled
   });
 
+  const [savedMovies, setSavedMovies] = useState([]);
+  const getSavedMovies = () => {
+    mainApi.getSavedMovies(token)
+      .then(setSavedMovies)
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  const getUser = () => {
+    mainApi.getUser(token)
+      .then(setUser)
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  useEffect(() => {
+    if (token) {
+      getSavedMovies();
+      if (!user) {
+        getUser();
+      }
+    }
+  }, [token]);
+
+  const [likes, setLikes] = useState({});
+  useEffect(() => {
+    setLikes(savedMovies.reduce((ref, savedMovie) => ({
+      ...ref,
+      [savedMovie.movieId]: savedMovie._id
+    }), {}))
+  }, [savedMovies]);
+
+  const saveMovie = (movie) => {
+    return mainApi.saveMovie(movie, appContext.token).then((data) => {
+      getSavedMovies();
+    })   
+    .catch((error) => {
+      console.log(error);
+    });
+  }
+
+  const deleteMovie = (id) => {
+    return mainApi.deleteMovie(id, appContext.token).then((data) => {
+      getSavedMovies();
+    })   
+    .catch((error) => {
+      console.log(error);
+    });
+  }
+
   const [isMenuVisible, menuHandlers] = useMenu();
 
   return (
@@ -48,30 +102,42 @@ function App() {
                 <Main />
               </PageWrapper>
             </Route>
-            <Route path="/movies">
+            <ProtectedRoute path="/movies" loggedIn={token}>
               <PageWrapper headerProps={menuHandlers}>
                 <Movies 
                   movies={filteredMovies}
-                  errorMessage={errorMessage} 
-                  handleMoviesSearch={handleMoviesSearch}
-                  isLoading={isLoading}
-                  isShortMoviesEnabled={isShortMoviesEnabled}
-                  setIsShortMoviesEnabled={setIsShortMoviesEnabled}
+                  likes={likes}
+                  saveMovie={saveMovie}
+                  deleteMovie={deleteMovie}
                   movieName={movieName}
                   setMovieName={setMovieName}
+                  isShortMoviesEnabled={isShortMoviesEnabled}
+                  setIsShortMoviesEnabled={setIsShortMoviesEnabled}                  
+                  handleMoviesSearch={handleMoviesSearch}
+                  isLoading={isLoading}
+                  errorMessage={errorMessage} 
                 />
               </PageWrapper>
-            </Route>
-            <Route path="/saved-movies">
+            </ProtectedRoute>
+            <ProtectedRoute path="/saved-movies" loggedIn={token}>
               <PageWrapper headerProps={menuHandlers}>
-                <SavedMovies />
+                <SavedMovies
+                  savedMovies={savedMovies}
+                  saveMovie={saveMovie}
+                  deleteMovie={deleteMovie}
+                  movieName={movieName}
+                  setMovieName={setMovieName}
+                  isShortMoviesEnabled={isShortMoviesEnabled}
+                  setIsShortMoviesEnabled={setIsShortMoviesEnabled}
+                  handleMoviesSearch={() => console.log('SEARCH')}
+                />
               </PageWrapper>
-            </Route>
-            <Route exact path="/profile">
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/profile" loggedIn={token}>
               <PageWrapper withFooter={false} headerProps={menuHandlers}>
                 <Profile />
               </PageWrapper>
-            </Route>
+            </ProtectedRoute>
             <Route exact path="/signup">
               <PageWrapper withFooter={false}>
                 <Register />
