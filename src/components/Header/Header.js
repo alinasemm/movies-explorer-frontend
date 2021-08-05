@@ -25,8 +25,6 @@ function Header({ openMenu, closeMenu, headerClassName = '' }) {
   const [links, setLinks] = useState(defaultLinks);
 
   const appContext = useContext(AppContext);
-  console.log('Header');
-  console.log(appContext.user, appContext.token);
 
   useEffect(() => {
     const nextLinks = defaultLinks.map(link => {
@@ -46,17 +44,6 @@ function Header({ openMenu, closeMenu, headerClassName = '' }) {
   const handleLogoClick = () => history.push('/');
 
   switch (location.pathname) {
-    case '/':
-      return (
-        <header className='header'>
-          <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo' onClick={handleLogoClick}/>
-          <div className='header__button-group'>
-            <Button buttonClassName='button_medium button_transparent' text='Регистрация' onClick={() => history.push('/signup')} />
-            <Button buttonClassName='button_small' text='Войти' onClick={() => history.push('/signin')}/>
-          </div>
-        </header>
-      );
-
     case '/signup':
     case '/signin':
       return (
@@ -65,17 +52,33 @@ function Header({ openMenu, closeMenu, headerClassName = '' }) {
         </header>
       );
 
+    case '/':
     case '/movies':
     case '/saved-movies':
     case '/profile':
       return (
-        <header className='header header_movies'>
-          <div className='header__main'>
-            <img alt='логотип страницы о Проекте' src={headerLogo} className="header__logo" onClick={handleLogoClick}/>
-            <Navigation links={links} className='navigation_horizontal' />
-          </div>
-          <BurgerButton onClick={openMenu} />
-          <UserInfo contClassName='user-info_movies' onClick={closeMenu} />
+        <header className={`header ${location.pathname === '/' ? 'header_pink' : ''}`}>
+          {appContext.user
+            ? (
+              <>
+                <div className='header__main'>
+                  <img alt='логотип страницы о Проекте' src={headerLogo} className="header__logo" onClick={handleLogoClick}/>
+                  <Navigation links={links} className='navigation_horizontal' />
+                </div>
+                <BurgerButton onClick={openMenu} />
+                <UserInfo contClassName='user-info_movies' onClick={closeMenu} />
+              </>
+            )
+            : (
+              <>
+                <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo' onClick={handleLogoClick}/>
+                <div className='header__button-group'>
+                  <Button buttonClassName='button_medium button_transparent' text='Регистрация' onClick={() => history.push('/signup')} />
+                  <Button buttonClassName='button_small' text='Войти' onClick={() => history.push('/signin')}/>
+                </div>
+              </>
+            )
+          }
         </header>
       );
 

@@ -5,19 +5,18 @@
   padding: 0px 70px;
   margin: auto;
   height: 74px;
-  background: #F3C1F8;
+  background-color: #FFFFFF;
 }
 
 .header_sign {
-  background: #FFFFFF;
   width: 396px;
   height: 38px;
   padding: 0;
   margin-top: 70px;
 }
 
-.header_movies {
-  background: #FFFFFF;
+.header_pink {
+  background-color: #F3C1F8;
 }
 
 .header__logo {
