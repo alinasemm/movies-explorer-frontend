@@ -1,5 +1,7 @@
+const baseUrl = 'http://api.alina-movies-explorer.nomoredomains.icu';
+
 export function createUser({ name, email, password }) {
-  return fetch('http://localhost:3001/signup', {
+  return fetch(`${baseUrl}/signup`, {
       method: 'POST', 
       body: JSON.stringify({
         name,
@@ -16,7 +18,7 @@ export function createUser({ name, email, password }) {
 }
 
 export function login({ email, password }) {
-  return fetch('http://localhost:3001/signin', {
+  return fetch(`${baseUrl}/signin`, {
     method: 'POST', 
       body: JSON.stringify({
         email,
@@ -32,7 +34,7 @@ export function login({ email, password }) {
 }
 
 export function getUser(token) {
-  return fetch('http://localhost:3001/users/me', {
+  return fetch(`${baseUrl}/users/me`, {
     method: 'GET', 
       headers: {
         authorization: `Bearer ${token}`
@@ -44,7 +46,7 @@ export function getUser(token) {
 }
 
 export function saveMovie(movie, token) {
-  return fetch('http://localhost:3001/movies', {
+  return fetch(`${baseUrl}/movies`, {
     method: 'POST', 
       body: JSON.stringify(movie),
       headers: {
@@ -58,7 +60,7 @@ export function saveMovie(movie, token) {
 }
 
 export function deleteMovie(id, token) {
-  return fetch(`http://localhost:3001/movies/${id}`, {
+  return fetch(`${baseUrl}/movies/${id}`, {
     method: 'DELETE',
       headers: {
         authorization: `Bearer ${token}`
@@ -70,7 +72,7 @@ export function deleteMovie(id, token) {
 }
 
 export function getSavedMovies(token) {
-  return fetch('http://localhost:3001/movies', {
+  return fetch(`${baseUrl}/movies`, {
     method: 'GET',
       headers: {
         authorization: `Bearer ${token}`
