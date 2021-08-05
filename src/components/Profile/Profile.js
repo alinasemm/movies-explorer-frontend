@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Form from '../Form/Form';
 import EditAndExitButton from '../EditAndExitButton/EditAndExitButton';
 import { useHistory } from 'react-router-dom';
+import { AppContext } from '../../AppContext';
 
 const inputs = [
   {
@@ -36,6 +37,14 @@ function Profile() {
 
   const isSubmitEnabled = Object.values(validationStatus).every((isValid) => isValid);
 
+  const appContext = useContext(AppContext);
+
+  function handleSignOut() {
+    appContext.setUser(null);
+    appContext.setToken('');
+    history.push('/');
+  }
+
   return (
     <Form
       title='Привет, Виталий!'
@@ -46,8 +55,8 @@ function Profile() {
     >
       <EditAndExitButton
         editText='Редактировать'
-        exitText='Выйти'
-        onClick={() => history.push('/signup')}
+        exitText='Выйти из аккаунта'
+        onClick={handleSignOut}
         isDisabled={!isSubmitEnabled}
       />
     </Form>

@@ -71,7 +71,7 @@ function Register() {
     }).then((data) => {
       const hasError = data.error
       if (hasError) {
-        setErrorMessage(data.validation?.body?.message);
+        setErrorMessage(data.validation?.body?.message || data.message);
         return
       }
 

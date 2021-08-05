@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
 
-import * as api from './utils/moviesApi'
+import * as api from './moviesApi'
 
-import { filterMovies } from './utils/filterMovies';
-import { useLocalStorageState } from './utils/useLocalStorageState';
-import { useInitialRender } from './utils/useInitialRender';
+import { filterMovies } from './filterMovies';
+import { useLocalStorageState } from './useLocalStorageState';
+import { useInitialRender } from './useInitialRender';
 
 export function useMovies ({ setIsLoading, setErrorMessage, movieName, isShortMoviesEnabled }) {
   const [movies, setMovies] = useLocalStorageState([], 'movies');
