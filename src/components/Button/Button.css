@@ -22,7 +22,8 @@
 .button_disabled {
   pointer-events: none;
   cursor: default;
-  background-color: aqua;
+  background-color: #F8F8F8;
+  color: #C2C2C2;
 }
 
 .button_small {
