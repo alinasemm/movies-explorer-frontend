@@ -22,7 +22,7 @@ function MoviesCard({ id, movie, saveMovie, deleteMovie, withDeleteButton }) {
     />;
 
   return (
-    <a href={movie.trailerLink} className="movies__card" target="__black" rel='noreferrer'>
+    <a href={movie.trailer} className="movies__card" target="__black" rel='noreferrer'>
       <img src={movie.thumbnail} alt='превью фильма' className="movies__card-photo" />
       <div className='movies__content'>
         <div className='movies__card-text'>
