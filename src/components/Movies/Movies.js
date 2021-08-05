@@ -61,7 +61,7 @@ function Movies({
         setIsShortMoviesEnabled={setIsShortMoviesEnabled}
       />
       {isLoading && <Preloader />}
-      {!isLoading && errorMessage && <ErrorMessage message={errorMessage} />}
+      {!isLoading && errorMessage && <ErrorMessage message={errorMessage} errorMessageClassName={'error-message_movies'}/>}
       {!isLoading && !errorMessage && <MoviesCardList movies={movies} />}
     </div>
   );

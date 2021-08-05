@@ -8,11 +8,12 @@ function Input({
   initialValue = '',
   validationStatus,
   setValidationStatus,
+  value,
+  setValue,
   ...props
 }) {
   const [errorMessage, setErrorMessage] = useState('');
 
-  const [value, setValue] = useState(initialValue);
   const handleChange = (event) => {
     const input = event.target;
 
@@ -42,7 +43,7 @@ function Input({
         {...props}
       />
       {errorMessage && (
-        <span className='error-message'>
+        <span className='input__error-message'>
           {errorMessage}
         </span>
       )}

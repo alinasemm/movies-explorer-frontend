@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import UserInfo from '../UserInfo/UserInfo';
 import BurgerButton from '../BurgerButton/BurgerButton'
 import Button from '../Button/Button'
 import headerLogo from '../../images/header-logo.svg';
+import { AppContext } from '../../AppContext';
 
 const defaultLinks = [
   { 
@@ -22,6 +23,10 @@ function Header({ openMenu, closeMenu, headerClassName = '' }) {
   const location = useLocation();
   const history = useHistory();
   const [links, setLinks] = useState(defaultLinks);
+
+  const appContext = useContext(AppContext);
+  console.log('Header');
+  console.log(appContext.user, appContext.token);
 
   useEffect(() => {
     const nextLinks = defaultLinks.map(link => {

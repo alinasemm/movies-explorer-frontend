@@ -1,8 +1,8 @@
 import React from 'react';
 
-function ErrorMessage({ message }) {
+function ErrorMessage({ message, errorMessageClassName }) {
   return (
-    <p className='error-message_movies'>{message}</p>
+    <p className={`error-message ${errorMessageClassName}`}>{message}</p>
   );
 }
 
