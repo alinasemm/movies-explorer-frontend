@@ -25,7 +25,7 @@
 .edit-button_disabled {
   pointer-events: none;
   cursor: default;
-  background-color: aqua;
+  opacity: 0.25;
 }
 
 .exit-button {

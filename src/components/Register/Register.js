@@ -59,20 +59,18 @@ function Register() {
   function handleRegistrationSubmit(event) {  
     event.preventDefault();
     api.createUser({ name, email, password }).then((data) => {
-      const hasError = data.error
+      const hasError = data.error || data.message
       if (hasError) {
-        setErrorMessage(data.validation?.body?.message);
-        return
+        throw new Error(data.validation?.body?.message || data.message);
       }
 
       appContext.setUser(data);
 
       return api.login({ email, password });
     }).then((data) => {
-      const hasError = data.error
+      const hasError = data.error || data.message;
       if (hasError) {
-        setErrorMessage(data.validation?.body?.message || data.message);
-        return
+        throw new Error(data.validation?.body?.message || data.message);
       }
 
       appContext.setToken(data.token);
