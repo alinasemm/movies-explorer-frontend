@@ -17,11 +17,12 @@ export function useMoviesFilter ({
 
   const applyFilter = () => {
     const nextFilteredMovies = filterMovies(movies, movieName, isShortMoviesEnabled);
+
     if (nextFilteredMovies.length === 0) {
       setErrorMessage('Ничего не найдено');
-    } else {
-      setFilteredMovies(nextFilteredMovies);
     }
+
+    setFilteredMovies(nextFilteredMovies);
   }
 
   const handleMoviesSearch = () => {
@@ -42,7 +43,8 @@ export function useMoviesFilter ({
 
   const isInitialRender = useInitialRender();
   useEffect(() => {
-    if (!isInitialRender && movies.length > 0) {
+    if (!isInitialRender && (movieName || !isMovieNameRequired)) {
+      setErrorMessage('');
       applyFilter();
     }
   }, [movies, isShortMoviesEnabled]);

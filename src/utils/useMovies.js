@@ -1,10 +1,13 @@
+import { useState } from 'react'
+
 import * as api from './moviesApi'
 
 import { useLocalStorageState } from './useLocalStorageState';
 import { useMoviesFilter } from './useMoviesFilter';
 
-export function useMovies ({ setIsLoading, setErrorMessage, movieName, isShortMoviesEnabled }) {
+export function useMovies ({ setIsLoading, movieName, isShortMoviesEnabled }) {
   const [movies, setMovies] = useLocalStorageState([], 'movies');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const getMovies = () => {
     setIsLoading(true);
@@ -24,11 +27,17 @@ export function useMovies ({ setIsLoading, setErrorMessage, movieName, isShortMo
       });
   }
 
-  return useMoviesFilter({
+  const [filteredMovies, handleMoviesSearch] = useMoviesFilter({
     movies,
     movieName,
     isShortMoviesEnabled,
     setErrorMessage,
     onSearch: getMovies
   });
+
+  return {
+    moviesErrorMessage: errorMessage,
+    filteredMovies,
+    handleMoviesSearch,
+  };
 }

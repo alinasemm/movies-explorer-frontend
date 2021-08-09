@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import Main from './components/Main/Main';
@@ -13,92 +13,45 @@ import Login from './components/Login/Login';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
-import * as mainApi from './utils/mainApi'
 import { useMovies } from './utils/useMovies';
+import { useSavedMovies } from './utils/useSavedMovies';
 import { useLocalStorageState } from './utils/useLocalStorageState';
 import { useMenu } from './utils/useMenu';
-import { useMoviesFilter } from './utils/useMoviesFilter';
+import { useAppContext } from './utils/useAppContext';
 
 import { AppContext } from './AppContext';
 
 function App() {
-  const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const [user, setUser] = useLocalStorageState(null, 'user');
-  const [token, setToken] = useLocalStorageState('', 'token');
-  const appContext = { user, setUser, token, setToken };
+  const appContext = useAppContext();
 
   const [isShortMoviesEnabled, setIsShortMoviesEnabled] = useLocalStorageState(true, 'isShortMoviesEnabled');
   const [movieName, setMovieName] = useLocalStorageState('', 'movieName');
 
-  const [filteredMovies, handleMoviesSearch] = useMovies({
+  const {
+    moviesErrorMessage,
+    filteredMovies,
+    handleMoviesSearch,
+  } = useMovies({
     setIsLoading,
-    setErrorMessage,
     movieName,
     isShortMoviesEnabled,
   });
 
-  const [savedMovies, setSavedMovies] = useState([]);
-  const getSavedMovies = () => {
-    mainApi.getSavedMovies(token)
-      .then(setSavedMovies)
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
-  const [filteredSavedMovies, handleSavedMoviesSearch] = useMoviesFilter({
-    movies: savedMovies,
+  const {
+    savedMoviesErrorMessage,
+    filteredSavedMovies,
+    handleSavedMoviesSearch,
+    likes,
+    saveMovie,
+    deleteMovie,
+  } = useSavedMovies({
+    token: appContext.token,
+    setIsLoading,
     movieName,
     isShortMoviesEnabled,
-    setErrorMessage,
-    key: 'filteredSavedMovies',
-    isMovieNameRequired: false,
   });
-
-  const getUser = () => {
-    mainApi.getUser(token)
-      .then(setUser)
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
-  useEffect(() => {
-    if (token) {
-      getSavedMovies();
-      if (!user) {
-        getUser();
-      }
-    }
-  }, [token]);
-
-  const [likes, setLikes] = useState({});
-  useEffect(() => {
-    setLikes(savedMovies.reduce((ref, savedMovie) => ({
-      ...ref,
-      [savedMovie.movieId]: savedMovie._id
-    }), {}))
-  }, [savedMovies]);
-
-  const saveMovie = (movie) => {
-    return mainApi.saveMovie(movie, appContext.token).then((data) => {
-      getSavedMovies();
-    })   
-    .catch((error) => {
-      console.log(error);
-    });
-  }
-
-  const deleteMovie = (id) => {
-    return mainApi.deleteMovie(id, appContext.token).then((data) => {
-      getSavedMovies();
-    })   
-    .catch((error) => {
-      console.log(error);
-    });
-  }
 
   const [isMenuVisible, menuHandlers] = useMenu();
 
@@ -112,7 +65,7 @@ function App() {
                 <Main />
               </PageWrapper>
             </Route>
-            <ProtectedRoute path="/movies" loggedIn={token}>
+            <ProtectedRoute path="/movies" loggedIn={appContext.token}>
               <PageWrapper headerProps={menuHandlers}>
                 <Movies 
                   movies={filteredMovies}
@@ -125,11 +78,11 @@ function App() {
                   setIsShortMoviesEnabled={setIsShortMoviesEnabled}
                   handleMoviesSearch={handleMoviesSearch}
                   isLoading={isLoading}
-                  errorMessage={errorMessage}
+                  errorMessage={moviesErrorMessage}
                 />
               </PageWrapper>
             </ProtectedRoute>
-            <ProtectedRoute path="/saved-movies" loggedIn={token}>
+            <ProtectedRoute path="/saved-movies" loggedIn={appContext.token}>
               <PageWrapper headerProps={menuHandlers}>
                 <SavedMovies
                   savedMovies={filteredSavedMovies}
@@ -141,11 +94,11 @@ function App() {
                   setIsShortMoviesEnabled={setIsShortMoviesEnabled}
                   handleMoviesSearch={handleSavedMoviesSearch}
                   isLoading={isLoading}
-                  errorMessage={errorMessage}
+                  errorMessage={savedMoviesErrorMessage}
                 />
               </PageWrapper>
             </ProtectedRoute>
-            <ProtectedRoute exact path="/profile" loggedIn={token}>
+            <ProtectedRoute exact path="/profile" loggedIn={appContext.token}>
               <PageWrapper withFooter={false} headerProps={menuHandlers}>
                 <Profile />
               </PageWrapper>

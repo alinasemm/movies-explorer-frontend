@@ -2,7 +2,7 @@ export function formatMovie (movie, moviesUrl) {
   const url = `${moviesUrl}${movie.image?.url}`;
 
   return {
-    country: movie.country,
+    country: movie.country || 'unknown',
     director: movie.director,
     duration: movie.duration,
     year: movie.year,
