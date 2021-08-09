@@ -17,6 +17,7 @@ import * as mainApi from './utils/mainApi'
 import { useMovies } from './utils/useMovies';
 import { useLocalStorageState } from './utils/useLocalStorageState';
 import { useMenu } from './utils/useMenu';
+import { useMoviesFilter } from './utils/useMoviesFilter';
 
 import { AppContext } from './AppContext';
 
@@ -35,7 +36,7 @@ function App() {
     setIsLoading,
     setErrorMessage,
     movieName,
-    isShortMoviesEnabled
+    isShortMoviesEnabled,
   });
 
   const [savedMovies, setSavedMovies] = useState([]);
@@ -46,6 +47,15 @@ function App() {
         console.log(error);
       });
   }
+
+  const [filteredSavedMovies, handleSavedMoviesSearch] = useMoviesFilter({
+    movies: savedMovies,
+    movieName,
+    isShortMoviesEnabled,
+    setErrorMessage,
+    key: 'filteredSavedMovies',
+    isMovieNameRequired: false,
+  });
 
   const getUser = () => {
     mainApi.getUser(token)
@@ -112,24 +122,26 @@ function App() {
                   movieName={movieName}
                   setMovieName={setMovieName}
                   isShortMoviesEnabled={isShortMoviesEnabled}
-                  setIsShortMoviesEnabled={setIsShortMoviesEnabled}                  
+                  setIsShortMoviesEnabled={setIsShortMoviesEnabled}
                   handleMoviesSearch={handleMoviesSearch}
                   isLoading={isLoading}
-                  errorMessage={errorMessage} 
+                  errorMessage={errorMessage}
                 />
               </PageWrapper>
             </ProtectedRoute>
             <ProtectedRoute path="/saved-movies" loggedIn={token}>
               <PageWrapper headerProps={menuHandlers}>
                 <SavedMovies
-                  savedMovies={savedMovies}
+                  savedMovies={filteredSavedMovies}
                   saveMovie={saveMovie}
                   deleteMovie={deleteMovie}
                   movieName={movieName}
                   setMovieName={setMovieName}
                   isShortMoviesEnabled={isShortMoviesEnabled}
                   setIsShortMoviesEnabled={setIsShortMoviesEnabled}
-                  handleMoviesSearch={() => console.log('SEARCH')}
+                  handleMoviesSearch={handleSavedMoviesSearch}
+                  isLoading={isLoading}
+                  errorMessage={errorMessage}
                 />
               </PageWrapper>
             </ProtectedRoute>

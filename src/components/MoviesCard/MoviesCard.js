@@ -15,7 +15,7 @@ function MoviesCard({ id, movie, saveMovie, deleteMovie, withDeleteButton }) {
   }
 
   const button = withDeleteButton
-  ? <CrossIcon onClick={() => deleteMovie(id)} />
+  ? <CrossIcon onClick={toggleSelected} />
   : <button 
       className={`movies__card-button ${id ? 'movies__card-button_active' : ''}`} 
       onClick={toggleSelected}

@@ -16,7 +16,7 @@ function Navigation ({ className = '', links = [], linksClassName = '', onClick 
       {links.map(({ title = '', className = '', pathname = '/' }, i) => {
         return (
           <li
-            key={i}
+            key={pathname}
             className={`navigation__link ${className} ${linksClassName}`}
             onClick={(event) => handleClick(event, pathname)}
           >

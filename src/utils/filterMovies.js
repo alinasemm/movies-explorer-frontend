@@ -10,8 +10,8 @@ export function filterMovies (movies, key, isShortMoviesEnabled) {
 
     const isShortMovie = movie.duration <= shortMovieDuration;
 
-    if (isShortMovie) {
-      return isShortMoviesEnabled && hasMatch;
+    if (isShortMoviesEnabled) {
+      return isShortMovie && hasMatch;
     }
 
     return hasMatch;

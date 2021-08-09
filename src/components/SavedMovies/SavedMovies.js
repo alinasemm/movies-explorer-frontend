@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import SearchForm from '../SearchForm/SearchForm';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import Preloader from '../Preloader/Preloader';
 
 function SavedMovies({
   savedMovies,
@@ -14,8 +16,21 @@ function SavedMovies({
   isShortMoviesEnabled,
   setIsShortMoviesEnabled,
 
-  handleMoviesSearch
+  handleMoviesSearch,
+
+  errorMessage,
+  isLoading,
 }) {
+  useEffect(() => {
+    handleMoviesSearch();
+  }, []);
+
+  useEffect(() => {
+    if (!movieName) {
+      handleMoviesSearch();
+    }
+  }, [movieName]);
+
   return (
     <div className="saved-movies">
       <SearchForm
@@ -27,12 +42,14 @@ function SavedMovies({
         isShortMoviesEnabled={isShortMoviesEnabled}
         setIsShortMoviesEnabled={setIsShortMoviesEnabled}
       />
-      <MoviesCardList
+      {isLoading && <Preloader />}
+      {!isLoading && errorMessage && <ErrorMessage message={errorMessage} errorMessageClassName={'error-message_movies'}/>}
+      {!isLoading && !errorMessage && <MoviesCardList
         movies={savedMovies}
         saveMovie={saveMovie}
         deleteMovie={deleteMovie}
         withDeleteButton
-      />
+      />}
     </div>
   );
 }

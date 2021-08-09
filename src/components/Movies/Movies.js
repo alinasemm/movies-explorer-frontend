@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
@@ -22,6 +22,10 @@ function Movies({
   errorMessage,
   isLoading
 }) {
+  useEffect(() => {
+    handleMoviesSearch();
+  }, []);
+
   return (
     <div className="movies">
       <SearchForm
