@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import UserInfo from '../UserInfo/UserInfo';
 import BurgerButton from '../BurgerButton/BurgerButton'
 import Button from '../Button/Button'
 import headerLogo from '../../images/header-logo.svg';
+import { AppContext } from '../../AppContext';
 
 const defaultLinks = [
   { 
@@ -22,6 +23,8 @@ function Header({ openMenu, closeMenu, headerClassName = '' }) {
   const location = useLocation();
   const history = useHistory();
   const [links, setLinks] = useState(defaultLinks);
+
+  const appContext = useContext(AppContext);
 
   useEffect(() => {
     const nextLinks = defaultLinks.map(link => {
@@ -41,17 +44,6 @@ function Header({ openMenu, closeMenu, headerClassName = '' }) {
   const handleLogoClick = () => history.push('/');
 
   switch (location.pathname) {
-    case '/':
-      return (
-        <header className='header'>
-          <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo' onClick={handleLogoClick}/>
-          <div className='header__button-group'>
-            <Button buttonClassName='button_medium button_transparent' text='Регистрация' onClick={() => history.push('/signup')} />
-            <Button buttonClassName='button_small' text='Войти' onClick={() => history.push('/signin')}/>
-          </div>
-        </header>
-      );
-
     case '/signup':
     case '/signin':
       return (
@@ -60,17 +52,33 @@ function Header({ openMenu, closeMenu, headerClassName = '' }) {
         </header>
       );
 
+    case '/':
     case '/movies':
     case '/saved-movies':
     case '/profile':
       return (
-        <header className='header header_movies'>
-          <div className='header__main'>
-            <img alt='логотип страницы о Проекте' src={headerLogo} className="header__logo" onClick={handleLogoClick}/>
-            <Navigation links={links} className='navigation_horizontal' />
-          </div>
-          <BurgerButton onClick={openMenu} />
-          <UserInfo contClassName='user-info_movies' onClick={closeMenu} />
+        <header className={`header ${location.pathname === '/' ? 'header_pink' : ''}`}>
+          {appContext.user
+            ? (
+              <>
+                <div className='header__main'>
+                  <img alt='логотип страницы о Проекте' src={headerLogo} className="header__logo" onClick={handleLogoClick}/>
+                  <Navigation links={links} className='navigation_horizontal' />
+                </div>
+                <BurgerButton onClick={openMenu} />
+                <UserInfo contClassName='user-info_movies' onClick={closeMenu} />
+              </>
+            )
+            : (
+              <>
+                <img alt='логотип страницы о Проекте' src={headerLogo} className='header__logo' onClick={handleLogoClick}/>
+                <div className='header__button-group'>
+                  <Button buttonClassName='button_medium button_transparent' text='Регистрация' onClick={() => history.push('/signup')} />
+                  <Button buttonClassName='button_small' text='Войти' onClick={() => history.push('/signin')}/>
+                </div>
+              </>
+            )
+          }
         </header>
       );
 

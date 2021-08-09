@@ -1,49 +1,61 @@
 import React, { useState, useEffect } from 'react';
-import previewCard from '../../images/preview-1.png';
 import MoviesCard from '../MoviesCard/MoviesCard';
+import MoreCards from '../MoreCards/MoreCards';
 
-function MoviesCardList({ withDeleteButton }) {
-  const [cardsLength, setCardsLength] = useState(16)
+function MoviesCardList({ movies, likes = {}, saveMovie, deleteMovie, withDeleteButton }) {
+  const [cardsLength, setCardsLength] = useState(16);
+  const [cardsStep, setCardsStep] = useState(4);
 
-  const updateCardsLength = () => {
-    if (document.documentElement.clientWidth < 550) {
+  const updateCardsSettings = () => {
+    if (document.documentElement.clientWidth < 767) {
       setCardsLength(5);
+      setCardsStep(2)
     } else if (document.documentElement.clientWidth < 1018) {
       setCardsLength(8);
+      setCardsStep(2);
+    } else if (document.documentElement.clientWidth < 1279) {
+      setCardsLength(12);
+      setCardsStep(3);
     } else {
       setCardsLength(16);
+      setCardsStep(4);
     }
   }
 
+  const handleMoreCardsClick = () => {
+    setCardsLength(cardsLength + cardsStep);
+  }
+
   useEffect(() => {
-    updateCardsLength();
-    window.addEventListener('resize', updateCardsLength);
+    updateCardsSettings();
+    window.addEventListener('resize', updateCardsSettings);
     return () => {
-      window.removeEventListener('resize', updateCardsLength);
+      window.removeEventListener('resize', updateCardsSettings);
     }
   }, []);
 
-  const movies = Array.from({ length: cardsLength }).map((_, i) => ({
-    thumbnail: previewCard,
-    name: '33 слова о дизайне',
-    id: i,
-    duration: '1ч42м',
-  }));
+  if(movies.length === 0) {
+    return null;
+  }
 
   return (
-    <div className="movies__card-list">
-        {movies.map((movie) => {
+    <>
+      <div className="movies__card-list">
+        {movies.slice(0, cardsLength).map((movie) => {
           return (
             <MoviesCard
-              key={movie.id}
-              name={movie.name}
-              thumbnail={movie.thumbnail}
-              duration={movie.duration}
+              key={movie.movieId}
+              id={likes[`${movie.movieId}`] || movie._id}
+              movie={movie}
+              saveMovie={saveMovie}
+              deleteMovie={deleteMovie}
               withDeleteButton={withDeleteButton}
             />
           )
         })}
       </div>
+      {movies.length > cardsLength && <MoreCards onClick={handleMoreCardsClick}/>}
+    </>
   );
 }
 

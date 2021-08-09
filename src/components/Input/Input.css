@@ -79,7 +79,7 @@
   color: #FF4062;
 }
 
-.error-message {
+.input__error-message {
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
@@ -87,4 +87,3 @@
   color: #FF4062;
   margin-top: 6px;
 }
-

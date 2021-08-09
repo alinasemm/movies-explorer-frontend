@@ -3,6 +3,8 @@
   height: 218px;
   box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
+  text-decoration: none;
+  color: black;
 }
 
 .movies__card-text {
@@ -23,10 +25,16 @@
   line-height: 16px;
   margin: 0;
   margin-bottom: 10px;
+  width: 216px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .movies__card-photo {
   width: 270px;
+  height: 151px;
+  object-fit: cover;
 }
 
 .movies__card-time {

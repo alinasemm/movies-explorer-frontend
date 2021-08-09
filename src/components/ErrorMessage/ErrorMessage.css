@@ -1,0 +1,15 @@
+.error-message {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  color: #FF4062;
+  align-self: center;
+}
+
+.error-message_movies {
+  font-size: 22px;
+  line-height: 40px;
+  text-align: center;
+  color: #ABABAB;
+}
