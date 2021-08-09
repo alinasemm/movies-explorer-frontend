@@ -9,7 +9,7 @@ export function useMoviesFilter ({
   movieName,
   isShortMoviesEnabled,
   setErrorMessage,
-  onSearch = () => null,
+  onSearch,
   key = 'filteredMovies',
   isMovieNameRequired = true,
 }) {
@@ -33,7 +33,8 @@ export function useMoviesFilter ({
       return;
     }
 
-    if (movies.length === 0) {
+    const shouldSearch = movies.length === 0 && onSearch;
+    if (shouldSearch) {
       onSearch();
       return;
     }
